@@ -22,6 +22,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const test = "test";
+  // this unused var should throw an error during the deploying phase.
+  // working later with husky precommit
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
