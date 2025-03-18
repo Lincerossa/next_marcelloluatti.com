@@ -22,3 +22,10 @@ jobs:
 
       - name: Build Next.js
         run: npm run build
+
+      - name: Checking that index.html exists in the out folder
+        run: |
+          if [ ! -f ./out/index.html ]; then
+            echo "next export phase failed"
+            exit 1
+          fi
