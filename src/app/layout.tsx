@@ -1,7 +1,6 @@
 import Layout from '@/components/Layout/Root';
 import type { Metadata } from 'next';
-import StyledComponentsRegistry from '@/lib/registry';
-import GlobalStyle from '@/styles/global';
+import './global.css';
 
 export const metadata: Metadata = {
   title: 'Marcello Luatti | Frontend Engineer',
@@ -16,10 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <StyledComponentsRegistry>
-          <GlobalStyle />
-          <Layout>{children}</Layout>
-        </StyledComponentsRegistry>
+      <Layout>{children}</Layout>
       </body>
     </html>
   );
