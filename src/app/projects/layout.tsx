@@ -1,19 +1,15 @@
-import Layout from '@/components/Layout/Nested'
-import type { Metadata } from 'next'
- 
+import Layout from '@/components/Layout/Nested';
+import type { Metadata } from 'next';
+
 export const metadata: Metadata = {
   title: 'Marcello Luatti | Frontend Engineer',
   description: 'Welcome to Next.js',
-}
+};
 
 export default function NestedLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
-  return (
-    <Layout>
-      {children}
-    </Layout>
-  )
+  return <Layout>{children}</Layout>;
 }

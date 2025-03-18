@@ -1,3 +1,3 @@
 export type DynamicParams = {
-  params: Promise<{ slug: string }>
-}
+  params: Promise<{ slug: string }>;
+};
