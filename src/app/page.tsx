@@ -1,5 +1,3 @@
-
- 
 export default function Page() {
-  return <h1>TODO: homepage</h1>
+  return <h1>TODO: homepage</h1>;
 }

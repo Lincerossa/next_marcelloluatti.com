@@ -1,7 +1,7 @@
-'use client'
+'use client';
 
-import { createGlobalStyle } from 'styled-components'
-import theme from './theme'
+import { createGlobalStyle } from 'styled-components';
+import theme from './theme';
 
 export default createGlobalStyle`
   html, body {
@@ -101,4 +101,4 @@ export default createGlobalStyle`
     }
   }
 
-`
+`;
