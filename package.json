@@ -16,10 +16,12 @@
     }
   },
   "dependencies": {
+    "@tailwindcss/postcss": "^4.0.14",
     "next": "15.2.3",
+    "postcss": "^8.5.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "styled-components": "^6.1.16"
+    "tailwindcss": "^4.0.14"
   },
   "hooks": {
     "pre-commit": "npm run format"
@@ -29,13 +31,13 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "babel-plugin-styled-components": "^2.1.4",
     "commitizen": "^4.3.1",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^9",
     "eslint-config-next": "15.2.3",
     "husky": "^9.1.7",
     "prettier": "^3.5.3",
-    "semantic-release": "^24.2.3",
     "typescript": "^5"
   }
 }
