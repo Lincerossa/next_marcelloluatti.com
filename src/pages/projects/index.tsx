@@ -1,8 +1,8 @@
 import { NextPageWithLayout } from "../../types"
-import Layout from "@/components/Layout"
+import Layout from "@/components/Layout/Nested"
 
  
-const Page: NextPageWithLayout = () => {
+const Projects: NextPageWithLayout = () => {
   return (
     <div>
       <h1>TODO: projects</h1>
@@ -10,7 +10,13 @@ const Page: NextPageWithLayout = () => {
   )
 }
 
-Page.getLayout = Layout
+Projects.getLayout = function getLayout(page) {
+  return (
+    <Layout>
+      {page}
+    </Layout>
+  )
+}
 
 
-export default Page
+export default Projects

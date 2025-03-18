@@ -1,5 +1,5 @@
 import { NextPageWithLayout } from "../types"
-import Layout from "@/components/Layout"
+import Layout from "@/components/Layout/Nested"
 
  
 const Page: NextPageWithLayout = () => {
@@ -10,7 +10,13 @@ const Page: NextPageWithLayout = () => {
   )
 }
 
-Page.getLayout = Layout
+Page.getLayout = function getLayout(page) {
+  return (
+    <Layout>
+      {page}
+    </Layout>
+  )
+}
 
 
 export default Page

@@ -1,6 +1,4 @@
 import { NextPageWithLayout } from "../types"
-import Layout from "@/components/Layout"
-
  
 const Page: NextPageWithLayout = () => {
   return (
@@ -9,8 +7,5 @@ const Page: NextPageWithLayout = () => {
     </div>
   )
 }
-
-Page.getLayout = Layout
-
 
 export default Page
