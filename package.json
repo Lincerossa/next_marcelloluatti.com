@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@tailwindcss/postcss": "^4.0.14",
+    "motion": "^12.5.0",
     "next": "15.2.3",
     "postcss": "^8.5.3",
     "react": "^19.0.0",
@@ -31,7 +32,6 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "babel-plugin-styled-components": "^2.1.4",
     "commitizen": "^4.3.1",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^9",

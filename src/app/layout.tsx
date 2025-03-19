@@ -1,4 +1,4 @@
-import Layout from '@/components/Layout/Root';
+import MagicMouse from '@/components/MagicMouse';
 import type { Metadata } from 'next';
 import './global.css';
 
@@ -15,7 +15,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-      <Layout>{children}</Layout>
+        <MagicMouse />
+        {children}
       </body>
     </html>
   );
