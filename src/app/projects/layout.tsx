@@ -1,15 +1,12 @@
-import Layout from '@/components/Layout/Nested';
-import type { Metadata } from 'next';
+import Layout from '@/components/Layout';
+import { getLayoutData } from '@/utils';
 
-export const metadata: Metadata = {
-  title: 'Marcello Luatti | Frontend Engineer',
-  description: 'Welcome to Next.js',
-};
-
-export default function NestedLayout({
+export default async function NestedLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return <Layout>{children}</Layout>;
+  const { items } = await getLayoutData();
+
+  return <Layout items={items}>{children}</Layout>;
 }
