@@ -1,12 +1,12 @@
+import { getCategories } from '@/api/getCategories';
 import Layout from '@/components/Layout';
-import { getLayoutData } from '@/utils';
 
 export default async function NestedLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const { items } = await getLayoutData();
+  const categories = await getCategories();
 
-  return <Layout items={items}>{children}</Layout>;
+  return <Layout items={categories}>{children}</Layout>;
 }

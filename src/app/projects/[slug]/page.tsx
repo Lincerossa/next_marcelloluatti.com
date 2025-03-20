@@ -1,12 +1,19 @@
+import { getProjects } from '@/api/getProjects';
+import type { Project } from '@/api/type';
 import PageHero from '@/components/PageHero';
 import { DynamicParams } from '@/types';
 
 export async function generateStaticParams() {
-  // TODO: read from fs at build time
-  return [{ slug: 'first-project' }, { slug: 'second-project' }];
+  const projects = await getProjects();
+
+  return projects.map((project) => ({
+    slug: project.slug,
+  }));
 }
 
-export default async function Page({ params }: DynamicParams) {
+export default async function Project({ params }: DynamicParams) {
   const { slug } = await params;
-  return <PageHero title={`Project: ${slug}`} />;
+  const projects = await getProjects();
+  const project = projects.find((project) => project.slug === slug);
+  return <PageHero title={project?.title ?? ''} />;
 }
