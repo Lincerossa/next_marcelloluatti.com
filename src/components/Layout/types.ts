@@ -9,7 +9,11 @@ export type HeaderProps = {
 export type LayoutProps = HeaderProps
 
 
-export type MenuItemsProps = Pick<HeaderProps, 'items'> & {
+export type MenuProps = Pick<HeaderProps, 'items'> & {
   pathname: string
   initial: boolean
+}
+
+export type MenuItemsProps = MenuProps & {
+  mode: 'desktop' | 'mobile'
 }

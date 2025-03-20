@@ -1,9 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --primary-color: #e84545;
+  --primary-color: #ff2056;
   --secondary-color: #2b2e4a;
   --thirdary-color: #f08a5d;
+}
+
+::selection {
+  color: rgb(255, 255, 255);
+  background: var(--primary-color);
 }
 
 html, body {
@@ -25,18 +30,19 @@ html, body {
   left: 50%;
   transform: translate(-50%, -50%);
   margin: 0;
-  cursor: pointer;
   text-decoration: none;
   color: #fff;
   &:before,
   &:after {
     display: block;
+    content: attr(data-content);
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
     opacity: .8;
+    
   }
   &:after {
     color: #0ff;
@@ -47,13 +53,11 @@ html, body {
     transform: translate(-2px, 2px);
     z-index: -1;
   }
-  &:hover {
-    &:before {
-      animation: glitch-left .6s cubic-bezier(.25, .46, .45, .94) both infinite
-    }
-    &:after {
-      animation: glitch-left-2 .6s cubic-bezier(.25, .46, .45, .94) reverse both infinite
-    }
+  &:before {
+    animation: glitch-left .6s cubic-bezier(.25, .46, .45, .94) both infinite
+  }
+  &:after {
+    animation: glitch-left-2 .6s cubic-bezier(.25, .46, .45, .94) reverse both infinite
   }
 }
 
