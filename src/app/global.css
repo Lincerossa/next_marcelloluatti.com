@@ -90,3 +90,17 @@ html, body {
       transform: translate(0)
   }
 }
+
+.red-dot {
+  &:after {
+    content: "";
+    position: absolute;
+    top: 55%;
+    transform: translate(0px, -50%);
+    border-radius: 50%;
+    right: -0.7rem;
+    width: 0.4rem;
+    height: 0.4rem;
+    background: var(--primary-color);
+  }
+}

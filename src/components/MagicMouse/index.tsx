@@ -28,7 +28,7 @@ const MagicMouse = () => {
           left,
           top,
         }}
-        className={`hidden md:block bg-rose-500 -translate-x-1/2 -translate-y-1/2 fixed h-2 w-2 rounded-full pointer-events-none z-3`}
+        className={`hidden md:block bg-rose-500 -translate-x-1/2 -translate-y-1/2 fixed h-2 w-2 rounded-full pointer-events-none z-12`}
       />
       <motion.div
         initial={{ left: 0, top: 0 }}
@@ -36,7 +36,7 @@ const MagicMouse = () => {
         transition={{ duration: 0.2 }}
         style={{
           position: 'fixed',
-          zIndex: 3,
+          zIndex: 12,
           border: '2px solid #ff2056',
           borderRadius: '50%',
           pointerEvents: 'none',

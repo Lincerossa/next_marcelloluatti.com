@@ -16,9 +16,9 @@ export default async function Projects() {
     <div className="mb-2">
       <PageHero title="Projects" />
       <Wrapper>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 py-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 py-8">
           {cards.map((card) => (
-            <Link key={card.title} href={card.slug}>
+            <Link key={card.slug} href={card.slug}>
               <Card {...card} />
             </Link>
           ))}

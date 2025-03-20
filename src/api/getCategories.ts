@@ -6,6 +6,10 @@ export const getCategories: () => Promise<Category[]> = () => {
     setTimeout(() => {
       resolve([
         {
+          label: 'About',
+          slug: 'about',
+        },
+        {
           label: 'Projects',
           slug: 'projects',
         },
@@ -13,6 +17,7 @@ export const getCategories: () => Promise<Category[]> = () => {
           label: 'Posts',
           slug: 'posts',
         },
+   
       ]);
     }, 500);
   });
