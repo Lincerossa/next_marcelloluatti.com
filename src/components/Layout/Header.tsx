@@ -38,11 +38,8 @@ const Header: FC<HeaderProps> = ({ items }) => {
         flex justify-between
         w-full
         items-center
-        px-4
         transition duration-200 ease-in
-        ${initial ? 'bg-transparent' : 'bg-white'}
-        ${initial ? '' : 'md:shadow-md'}
-        ${initial ? '' : 'opacity-90'}
+        ${initial ? 'bg-transparent' : 'bg-white md:shadow-md opacity-90'}
         ${direction === 'down' ? '-translate-y-full' : ''}
       `}>
       <Wrapper>
