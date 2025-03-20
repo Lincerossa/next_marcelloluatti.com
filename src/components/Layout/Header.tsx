@@ -41,6 +41,7 @@ const Header: FC<HeaderProps> = ({ items }) => {
         transition duration-200 ease-in
         ${initial ? 'bg-transparent' : 'bg-white md:shadow-md opacity-90'}
         ${direction === 'down' ? '-translate-y-full' : ''}
+        z-11
       `}>
       <Wrapper>
         <div
