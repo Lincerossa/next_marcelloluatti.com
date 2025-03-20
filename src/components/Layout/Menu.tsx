@@ -26,6 +26,14 @@ const MenuItems: FC<MenuItemsProps> = ({ items, pathname, initial, mode }) => (
   </ul>
 );
 
+/*************  ✨ Codeium Command ⭐  *************/
+/**
+ * The mobile menu component.
+ *
+ * @param props - The props for the component.
+ * @returns The component.
+ */
+/******  012c6d12-64fb-4fdd-b961-6b450a0e14c3  *******/
 const Mobile: FC<MenuProps> = (props) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
 
