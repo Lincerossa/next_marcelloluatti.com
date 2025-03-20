@@ -1,3 +1,4 @@
+import PageHero from '@/components/PageHero';
 import { DynamicParams } from '@/types';
 
 export async function generateStaticParams() {
@@ -7,5 +8,5 @@ export async function generateStaticParams() {
 
 export default async function Page({ params }: DynamicParams) {
   const { slug } = await params;
-  return <h1>TODO: post {slug}</h1>;
+  return <PageHero title={`Post: ${slug}`} />;
 }

@@ -1,11 +1,14 @@
 'use client';
 
 import { FC, useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation';
 import { HeaderProps } from './types';
 import Link from 'next/link';
 import MenuItems from './MenuItems';
-
+import Logo from './Logo';
+import Wrapper from '../Wrapper';
 const Header: FC<HeaderProps> = ({ items }) => {
+  const pathname = usePathname();
   const [{ initial, direction }, setScrollStatus] = useState({
     position: 0,
     initial: true,
@@ -21,7 +24,6 @@ const Header: FC<HeaderProps> = ({ items }) => {
           : 'up',
     }));
   }
-
   useEffect(() => {
     window.addEventListener('scroll', handleGetDirection, false);
     return () => {
@@ -29,26 +31,33 @@ const Header: FC<HeaderProps> = ({ items }) => {
     };
   }, []);
 
-  const activeSlug = 'projects';
-
   return (
     <header
       className={`
         fixed top-0 right-0 left-0 z-3
         flex justify-between
         w-full
-        h-20
         items-center
         transition duration-200 ease-in
-        bg-transparent md:bg-white-900
-        shadow-none md:shadow-md
-        ${initial ? '' : 'bg-opacity-90'}
+        ${initial ? 'bg-transparent' : 'bg-white'}
+        ${initial ? '' : 'md:shadow-md'}
+        ${initial ? '' : 'opacity-90'}
         ${direction === 'down' ? '-translate-y-full' : ''}
       `}>
-      <Link href="/" as="/">
-        <h2>add logo</h2>
-      </Link>
-      <MenuItems items={items} activeSlug={activeSlug} />
+      <Wrapper>
+        <div
+          className={`
+          flex
+          items-center
+          justify-between
+          ${initial ? 'text-white' : 'text-rose-500'}
+        `}>
+          <Link href="/">
+            <Logo width={80} height={80} fill={initial ? 'white' : '#ff2056'} />
+          </Link>
+          <MenuItems items={items} pathname={pathname} initial={initial} />
+        </div>
+      </Wrapper>
     </header>
   );
 };

@@ -10,5 +10,6 @@ export type LayoutProps = HeaderProps
 
 
 export type MenuItemsProps = Pick<HeaderProps, 'items'> & {
-  activeSlug: string
+  pathname: string
+  initial: boolean
 }
