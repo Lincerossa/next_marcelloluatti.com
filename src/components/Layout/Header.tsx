@@ -4,7 +4,7 @@ import { FC, useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { HeaderProps } from './types';
 import Link from 'next/link';
-import MenuItems from './MenuItems';
+import Menu from './Menu';
 import Logo from './Logo';
 import Wrapper from '../Wrapper';
 const Header: FC<HeaderProps> = ({ items }) => {
@@ -38,6 +38,7 @@ const Header: FC<HeaderProps> = ({ items }) => {
         flex justify-between
         w-full
         items-center
+        px-4
         transition duration-200 ease-in
         ${initial ? 'bg-transparent' : 'bg-white'}
         ${initial ? '' : 'md:shadow-md'}
@@ -53,9 +54,9 @@ const Header: FC<HeaderProps> = ({ items }) => {
           ${initial ? 'text-white' : 'text-rose-500'}
         `}>
           <Link href="/">
-            <Logo width={80} height={80} fill={initial ? 'white' : '#ff2056'} />
+            <Logo width={80} height={80} fill={initial ? 'white' : 'auto'} />
           </Link>
-          <MenuItems items={items} pathname={pathname} initial={initial} />
+          <Menu pathname={pathname} items={items} initial={initial} />
         </div>
       </Wrapper>
     </header>

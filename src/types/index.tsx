@@ -6,4 +6,5 @@ export type SvgComponentProps = {
   width: number;
   height: number;
   fill?: string;
+  onClick?: VoidFunction;
 };
