@@ -12,96 +12,77 @@ html, body {
   color: black;
   margin: 0;
   @media (min-width: 768px){
-      cursor: none;
+    cursor: none;
   }
 }
 
-  strong {
-    font-weight: 600;
+.glitch {
+  line-height: 1;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  position:absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+  &:before,
+  &:after {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: .8;
   }
-  h1, h2, h3, h4 {
-    font-weight: 500;
-    color: var(--primary-color);
-    position: relative;
+  &:after {
+    color: #0ff;
+    z-index: -2;
+  }
+  &:before {
+    color: #bf1650;
+    transform: translate(-2px, 2px);
+    z-index: -1;
+  }
+  &:hover {
     &:before {
-      content:"";
-      width: 5rem;
-      border-bottom: 2px solid var(--thirdary-color);
-      position: absolute;
-      left: 0;
-      bottom: 0;
+      animation: glitch-left .6s cubic-bezier(.25, .46, .45, .94) both infinite
+    }
+    &:after {
+      animation: glitch-left-2 .6s cubic-bezier(.25, .46, .45, .94) reverse both infinite
     }
   }
+}
 
-  h1 {
-    font-size: 2rem;
-    @media (min-width: 768px){
-      font-size: 3rem;
-    }
+
+@keyframes glitch-left {
+  0% {
+      transform: translate(0)
   }
-
-  h2 {
-    font-size: 1.5rem;
-    @media (min-width: 768px){
-      font-size: 2rem;
-    }
+  33% {
+      transform: translate(-5px, 3px)
   }
-
-  h3 {
-    font-size: 1.375rem;
-    @media (min-width: 768px){
-      font-size: 1.5
-    }
+  66% {
+      transform: translate(5px, -3px)
   }
-
-  p, span {
-    font-weight: 400;
-    font-size: 1.25rem;
-    line-height: 1.75;
+  to {
+      transform: translate(0)
   }
-
-  *,
-  *:before,
-  *:after {
-    box-sizing: border-box;
-    font-family: 'Open Sans', sans-serif;
-
+}
+@keyframes glitch-left-2 {
+  0% {
+      transform: translate(0)
   }
-
-  a{
-    color: var(--primary-color) !important;
-    text-decoration: none;
-    &:hover{
-      color: var(--thirdary-color) !important;
-    }
+  33% {
+      transform: translate(-5px, -3px)
   }
-  a > * {
-    color: var(--primary-color) !important;
+  66% {
+      transform: translate(5px, 2px)
   }
-  
-
-  ::selection {
-    color: rgb(255, 255, 255);
-    background: var(--primary-color);
+  to {
+      transform: translate(0)
   }
-
-  button {
-    border-radius: 0 !important;
-  }
-  
-  .ant-modal-close-x {
-    padding: 0;
-    background: white;
-    height: 3rem;
-    width: 3rem;
-
-    &:hover {
-      background: var(--primary-color);
-      color: white;
-      cursor: pointer;
-    }
-
-    svg {
-      font-size: 1.25rem;
-    }
-  }
+}

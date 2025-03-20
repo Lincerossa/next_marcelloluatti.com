@@ -1,3 +1,5 @@
+import PageHero from '@/components/PageHero';
+
 export default function Page() {
-  return <h1>TODO: projects</h1>;
+  return <PageHero title="Projects" />;
 }
