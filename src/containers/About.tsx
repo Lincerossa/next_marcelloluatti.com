@@ -1,10 +1,16 @@
 import PageHero from '@/components/PageHero';
 import Wrapper from '@/components/Wrapper';
+import { FC } from 'react';
 
-export default function Page() {
+type AboutProps = {
+  title: string;
+};
+
+// TODO: lets evaluate if these hardcoded data should be moved to the CMS section
+const About: FC<AboutProps> = ({ title }) => {
   return (
     <>
-      <PageHero title="About" />
+      <PageHero title={title} />
       <Wrapper>
         <div className="py-8 text-xl tracking-wide">
           <p className="mb-4">
@@ -33,4 +39,6 @@ export default function Page() {
       </Wrapper>
     </>
   );
-}
+};
+
+export default About;
