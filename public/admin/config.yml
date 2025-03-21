@@ -2,6 +2,7 @@ backend:
   name: git-gateway
   repo: Lincerossa/next_marcelloluatti.com
   branch: main
+  use_graphql: true
 
 media_folder: 'public/images/uploads'
 public_folder: 'public/images/uploads'
@@ -12,6 +13,7 @@ collections:
     folder: 'public/about'
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Description', name: 'description', widget: 'markdown' }
   - name: 'projects'
     label: 'Projects'
