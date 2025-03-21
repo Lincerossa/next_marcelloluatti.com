@@ -1,18 +1,18 @@
 
 import type { CardProps } from "@/components/Card/types";
 
-type Project = CardProps & {
+type Post = CardProps & {
   slug: string;
 };
 
-type GetProjectsProps = () => Promise<Project[]>
-export const getProjects: GetProjectsProps = () => {
+type GetPostsProps = () => Promise<Post[]>
+export const getPosts: GetPostsProps = () => {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve([
         {
-          title: 'Project 1',
-          slug: 'first-project',
+          title: 'post 1',
+          slug: 'first-post',
           description: 'Description 1',
           tags: ['Item 1', 'Item 2', 'Item 3'],
           image: {
@@ -22,8 +22,8 @@ export const getProjects: GetProjectsProps = () => {
           },
         },
         {
-          title: 'Project 2',
-          slug: 'second-project',
+          title: 'post 2',
+          slug: 'second-post',
           description: 'Description 2',
           tags: ['Item 1', 'Item 2', 'Item 3'],
           image: {
@@ -33,8 +33,8 @@ export const getProjects: GetProjectsProps = () => {
           },
         },
         {
-          title: 'Project 3',
-          slug: 'third-project-3',
+          title: 'post 3',
+          slug: 'third-post-3',
           description: 'Description 3',
           tags: ['Item 1', 'Item 2', 'Item 3'],
           image: {
@@ -44,8 +44,8 @@ export const getProjects: GetProjectsProps = () => {
           },
         },
         {
-          title: 'Project 4',
-          slug: 'fourth-project',
+          title: 'post 4',
+          slug: 'fourth-post',
           description: 'Description 4',
           tags: ['Item 1', 'Item 2', 'Item 3'],
           image: {
@@ -55,8 +55,8 @@ export const getProjects: GetProjectsProps = () => {
           }
         },
         {
-          title: 'Project 5',
-          slug: 'fifth-project',
+          title: 'post 5',
+          slug: 'fifth-post',
           description: 'Description 5',
           tags: ['Item 1', 'Item 2', 'Item 3'],
           image: {
