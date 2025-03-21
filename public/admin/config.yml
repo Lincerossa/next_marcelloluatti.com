@@ -2,8 +2,6 @@ backend:
   name: git-gateway
   repo: Lincerossa/next_marcelloluatti.com
   branch: main
-  use_graphql: true
-
 media_folder: 'public/images/uploads'
 public_folder: 'public/images/uploads'
 local_backend: true
