@@ -1,0 +1,59 @@
+backend:
+  name: git-gateway
+  repo: Lincerossa/next_marcelloluatti.com
+  branch: main
+
+media_folder: 'public/images/uploads'
+public_folder: 'public/images/uploads'
+local_backend: true
+collections:
+  - label: 'About'
+    name: 'about'
+    folder: 'public/about'
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    fields:
+      - { label: 'Description', name: 'description', widget: 'markdown' }
+  - name: 'projects'
+    label: 'Projects'
+    folder: 'public/projects/'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Description', name: 'description', widget: 'string' }
+      - {
+          label: 'Short Description',
+          name: 'shortDescription',
+          widget: 'string',
+        }
+      - { label: 'Slug', name: 'slug', widget: 'string' }
+      - { label: 'Featured Image', name: 'image', widget: 'image' }
+      - label: 'Tags'
+        name: 'tags'
+        widget: 'list'
+        summary: '{{fields.name}}'
+        fields:
+          - { label: Name, name: name, widget: string }
+      - { label: 'Content', name: 'content', widget: 'markdown' }
+  - name: 'posts'
+    label: 'Posts'
+    folder: 'public/posts/'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Description', name: 'description', widget: 'string' }
+      - {
+          label: 'Short Description',
+          name: 'shortDescription',
+          widget: 'string',
+        }
+      - { label: 'Slug', name: 'slug', widget: 'string' }
+      - { label: 'Featured Image', name: 'image', widget: 'image' }
+      - label: 'Tags'
+        name: 'tags'
+        widget: 'list'
+        summary: '{{fields.name}}'
+        fields:
+          - { label: Name, name: name, widget: string }
+      - { label: 'Content', name: 'content', widget: 'markdown' }
