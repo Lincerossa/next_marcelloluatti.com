@@ -23,13 +23,14 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
   const categories = await getCategories();
   const posts = await getPosts();
   const projects = await getProjects();
-  const title = categories.find(({ slug }) => slug === category)?.label ?? '';
+  const categoryTitle =
+    categories.find(({ slug }) => slug === category)?.label ?? '';
 
   switch (category) {
     case 'projects':
       return (
         <ProjectsPage
-          title={title}
+          title={categoryTitle}
           items={projects.map((project) => ({
             ...project,
             slug: `/${category}/${project.slug}`,
@@ -39,7 +40,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
     case 'posts':
       return (
         <PostsPage
-          title={title}
+          title={categoryTitle}
           items={posts.map((post) => ({
             ...post,
             slug: `/${category}/${post.slug}`,
@@ -47,7 +48,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
         />
       );
     case 'about':
-      return <AboutPage title={title} />;
+      return <AboutPage title={categoryTitle} />;
     default:
       return null;
   }
