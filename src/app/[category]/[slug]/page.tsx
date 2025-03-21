@@ -45,9 +45,8 @@ export default async function ItemPage({ params }: ItemPage) {
         <ProjectPage title={slug} description={project?.description ?? ''} />
       );
     case 'posts':
-      return (
-        <PostPage title={slug} {...posts.find((post) => post.slug === slug)} />
-      );
+      const post = posts.find((project) => project.slug === slug);
+      return <PostPage title={slug} description={post?.description ?? ''} />;
     default:
       return null;
   }
