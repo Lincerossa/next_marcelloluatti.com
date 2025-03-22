@@ -1,8 +1,8 @@
-import { Project } from "@/types";
+import { Post } from "@/types";
 import matter from 'gray-matter'
 import fs from 'fs'
 
-type GetPostsProps = () => Project[]
+type GetPostsProps = () => Post[]
 type Tag = {
   name: string
 }
