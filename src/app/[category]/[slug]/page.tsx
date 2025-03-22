@@ -42,11 +42,21 @@ export default async function ItemPage({ params }: ItemPage) {
     case 'projects':
       const project = projects.find((project) => project.slug === slug);
       return (
-        <ProjectPage title={slug} description={project?.description ?? ''} />
+        <ProjectPage
+          title={slug}
+          content={project?.content ?? ''}
+          description={project?.description ?? ''}
+        />
       );
     case 'posts':
       const post = posts.find((project) => project.slug === slug);
-      return <PostPage title={slug} description={post?.description ?? ''} />;
+      return (
+        <PostPage
+          title={slug}
+          content={post?.content ?? ''}
+          description={post?.description ?? ''}
+        />
+      );
     default:
       return null;
   }

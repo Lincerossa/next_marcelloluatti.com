@@ -1,77 +1,29 @@
-import { Post } from "@/types";
+import { Project } from "@/types";
+import matter from 'gray-matter'
+import fs from 'fs'
 
-type GetPostsProps = () => Promise<Post[]>
+type GetPostsProps = () => Project[]
+type Tag = {
+  name: string
+}
+
 export const getPosts: GetPostsProps = () => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve([
-        {
-          title: 'post 1',
-          slug: 'first-post',
-          description: 'Description 1',
-          shortDescription: 'Description',
-          content: 'lorem ipsum',
-          tags: ['Item 1', 'Item 2', 'Item 3'],
-          image: {
-            src: 'https://res.cloudinary.com/dmgymopan/image/upload/q_auto:low/v1620935738/marcelloluatti.com/Screenshot_2021-05-13_at_21.55.16_acgcmk.png',
-            description: 'Description 1',
-            alt: 'Alt 1',
-          },
-        },
-        {
-          title: 'post 2',
-          slug: 'second-post',
-          description: 'Description 2',
-          shortDescription: 'Description',
-          content: 'lorem ipsum',
-          tags: ['Item 1', 'Item 2', 'Item 3'],
-          image: {
-            src: 'https://res.cloudinary.com/dmgymopan/image/upload/q_auto:low/v1620935738/marcelloluatti.com/Screenshot_2021-05-13_at_21.55.16_acgcmk.png',
-            description: 'Description 1',
-            alt: 'Alt 1',
-          },
-        },
-        {
-          title: 'post 3',
-          slug: 'third-post-3',
-          shortDescription: 'Description',
-          content: 'lorem ipsum',
-          description: 'Description 3',
-          tags: ['Item 1', 'Item 2', 'Item 3'],
-          image: {
-            src: 'https://res.cloudinary.com/dmgymopan/image/upload/q_auto:low/v1620935738/marcelloluatti.com/Screenshot_2021-05-13_at_21.55.16_acgcmk.png',
-            description: 'Description 1',
-            alt: 'Alt 1',
-          },
-        },
-        {
-          title: 'post 4',
-          slug: 'fourth-post',
-          description: 'Description 4',
-          shortDescription: 'Description',
-          content: 'lorem ipsum',
-          tags: ['Item 1', 'Item 2', 'Item 3'],
-          image: {
-            src: 'https://res.cloudinary.com/dmgymopan/image/upload/q_auto:low/v1620935738/marcelloluatti.com/Screenshot_2021-05-13_at_21.55.16_acgcmk.png',
-            description: 'Description 1',
-            alt: 'Alt 1', 
-          }
-        },
-        {
-          title: 'post 5',
-          slug: 'fifth-post',
-          description: 'Description 5',
-          tags: ['Item 1', 'Item 2', 'Item 3'],
-          shortDescription: 'Description',
-          content: 'lorem ipsum',
-          image: {
-            src: 'https://res.cloudinary.com/dmgymopan/image/upload/q_auto:low/v1620935738/marcelloluatti.com/Screenshot_2021-05-13_at_21.55.16_acgcmk.png',
-            description: 'Description 1',
-            alt: 'Alt 1', 
-          }
-        },
-     
-      ]);
-    }, 500);
-  });
+  const posts: string[] = fs.readdirSync(`./public/posts/`)
+  const results = posts.map((fileName) => {
+    const project = matter(fs.readFileSync(`./public/posts/${fileName}`, 'utf8')).data
+    return {
+      title: project.title,
+      slug: project.slug,
+      description: project.description,
+      shortDescription: project.shortDescription,
+      content: project.content,
+      tags: project.tags?.map((tag: Tag) => tag.name) ?? [], 
+      image: {
+        src: project.image.split('public/')[1],
+        description: 'description', // TODO
+        alt: 'Alt', // TODO
+      },
+    }
+  })
+  return results
 };
