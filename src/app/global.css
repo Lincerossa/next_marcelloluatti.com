@@ -133,3 +133,12 @@ pre::after {
 .blog-section img {
   margin: 2rem 0;
 }
+
+.canvasWrapper {
+  position: relative;
+
+  & canvas {
+    height: 100vh;
+    background-color: var(--secondary-color)
+  }
+}

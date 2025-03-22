@@ -8,9 +8,14 @@ import type { Category } from '@/types';
 
 export async function generateStaticParams() {
   const categories = await getCategories();
-  return categories.map((category) => ({
-    category: category.slug,
-  }));
+  return [
+    ...categories.map((category) => ({
+      category: category.slug,
+    })),
+    {
+      category: 'admin',
+    },
+  ];
 }
 
 type CategoryPageProps = {
@@ -49,6 +54,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
       );
     case 'about':
       return <AboutPage title={categoryTitle} />;
+
     default:
       return null;
   }
