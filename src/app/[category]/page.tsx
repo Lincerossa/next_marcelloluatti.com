@@ -58,7 +58,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
       return (
         <AboutPage
           title={categoryTitle}
-          items={about.storyLine}
+          items={about.items}
           content={about.content}
         />
       );

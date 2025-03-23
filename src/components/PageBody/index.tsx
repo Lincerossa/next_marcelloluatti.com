@@ -2,7 +2,7 @@ import { FC } from 'react';
 import ReactMarkdown from 'react-markdown';
 import type { PageBodyProps } from './types';
 
-const PageBody: FC<PageBodyProps> = ({ description, content }) => {
+const PageBody: FC<PageBodyProps> = ({ description, content, children }) => {
   return (
     <>
       {description && (
@@ -15,6 +15,7 @@ const PageBody: FC<PageBodyProps> = ({ description, content }) => {
           </ReactMarkdown>
         </div>
       )}
+      {children && children}
     </>
   );
 };

@@ -8,11 +8,23 @@ local_backend: true
 collections:
   - label: 'About'
     name: 'about'
-    folder: 'public/about'
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    folder: 'public/about/'
+    create: true
+    slug: 'index'
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Description', name: 'description', widget: 'markdown' }
+      - { label: 'Content', name: 'content', widget: 'markdown' }
+      - label: 'Storyline'
+        name: 'storyline'
+        widget: 'list'
+        summary: '{{fields.name}}'
+        fields:
+          - { label: Role, name: role, widget: string }
+          - { label: Company, name: company, widget: string }
+          - { label: Date, name: date, widget: string }
+          - { label: Description, name: description, widget: markdown }
+          - { label: Name, name: name, widget: string }
+          - { label: 'Image', name: 'image', widget: 'image' }
   - name: 'projects'
     label: 'Projects'
     folder: 'public/projects/'

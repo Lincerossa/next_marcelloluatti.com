@@ -2,13 +2,13 @@ import { StoryLineProps } from "@/components/StoryLine/types";
 
 type GetAbout = () => {
   content: string;
-  storyLine: StoryLineProps['items']
+  items: StoryLineProps['items']
 }
 
 export const getAbout: GetAbout = () => {
   return {
     content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
-    storyLine: [
+    items: [
       {
         role: 'Frontend Engineer II',
         company: 'Cloud Academy',

@@ -1,6 +1,4 @@
 import Wrapper from '@/components/Wrapper';
-import Card from '@/components/Card';
-import Link from 'next/link';
 import { CardProps } from '@/components/Card/types';
 import { FC } from 'react';
 import PageHero from '@/components/PageHero';
