@@ -1,12 +1,12 @@
 
 import type { Category } from "@/types";
 
-type GetCategoriesProps = () => {
+type GetCategories = () => {
   label: string;
   slug: Category
 }[]
 
-export const getCategories: GetCategoriesProps = () => ([
+export const getCategories: GetCategories = () => ([
   {
     label: 'About',
     slug: 'about',

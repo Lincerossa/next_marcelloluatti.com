@@ -3,7 +3,6 @@
 import { FC, useEffect, useState } from 'react';
 import type { MenuProps, MenuItemsProps } from './types';
 import Link from 'next/link';
-import theme from '@/consts/colors';
 import Hamburger from './Hamburger';
 import Close from './Close';
 import { useIsMobile } from '@/hooks';
@@ -55,7 +54,7 @@ const Mobile: FC<MenuProps> = (props) => {
       </Link>
       {isMenuOpen && (
         <div
-          style={{ backgroundColor: theme.COLORS.SECONDARY }}
+          style={{ backgroundColor: 'var(--secondary-color)' }}
           className="fixed inset-0 flex justify-center items-center">
           <div className="absolute top-4 right-4">
             <Link

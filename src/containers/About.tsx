@@ -1,13 +1,17 @@
 import PageHero from '@/components/PageHero';
+import StoryLine from '@/components/StoryLine';
+import type { StoryLineProps } from '@/components/StoryLine/types';
 import Wrapper from '@/components/Wrapper';
 import { FC } from 'react';
 
 type AboutProps = {
   title: string;
+  items: StoryLineProps['items'];
 };
 
 // TODO: lets evaluate if these hardcoded data should be moved to the CMS section
-const About: FC<AboutProps> = ({ title }) => {
+const About: FC<AboutProps> = ({ title, items }) => {
+  console;
   return (
     <>
       <PageHero title={title} />
@@ -36,6 +40,9 @@ const About: FC<AboutProps> = ({ title }) => {
             that matter most!
           </p>
         </div>
+      </Wrapper>
+      <Wrapper>
+        <StoryLine items={items} />
       </Wrapper>
     </>
   );

@@ -43,7 +43,7 @@ const Totem: FC<TotemProps> = ({
   const { materials } = useGLTF('/test.gltf');
 
   useFrame(({ clock }) => {
-    const time = clock.getElapsedTime() / 4;
+    const time = clock.getElapsedTime() / 3;
     if (time > timer) setActive(true);
     if (!group.current) return;
     group.current.rotation.y = negative ? +time : -time;
@@ -70,12 +70,14 @@ const Totem: FC<TotemProps> = ({
           {...props}
           dispose={null}
           position={[negative ? -1 : 1, position[1], position[2]]}>
-          <Text
-            fontSize={0.3}
-            color={hovered ? theme.COLORS.PRIMARY : 'white'}
-            textAlign="left">
-            {props.label}
-          </Text>
+          <Suspense fallback={null}>
+            <Text
+              fontSize={0.3}
+              color={hovered ? theme.COLORS.PRIMARY : 'white'}
+              textAlign="left">
+              {props.label}
+            </Text>
+          </Suspense>
         </group>
       )}
     </group>
