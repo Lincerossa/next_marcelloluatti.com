@@ -5,13 +5,13 @@ content: >-
   guitar player living by the beautiful **Lake Como**.
 
 
-  I love diving into the latest web development technologies and staying updated on all the coolest trends in coding.
+  I find joy in **building experiences** that will delight my users. 
 
 
-  Whether it's building sleek, responsive interfaces or jamming out a few tunes, I’m always up for a creative challenge. Balancing work, family life, and my hobbies can get hectic sometimes, but that’s part of the fun.
+  I particularly enjoy working on **complex interactions** and multi-step workflows that require **product and design thinking**, where my intuition and knowledge help me navigate problems.
 
 
-  I’m all about **continuous learning**, trying new things, and making sure I find time for the people (and the music) that matter most!
+  I work with whatever is needed, but my favorite tools are: **Next.js (ssr or ssg), React.js,  Styled Components, GraphQL, TypeScript, Jest, xState**
 
 
   ![](https://res.cloudinary.com/dmgymopan/image/upload/v1614077032/readme%20images/asd_lyzndn.png)
