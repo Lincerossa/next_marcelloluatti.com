@@ -1,10 +1,9 @@
 import Link from 'next/link';
-import theme from '@/consts/colors';
 import Logo from './Logo';
 import Wrapper from '../Wrapper';
 const Footer = () => {
   return (
-    <footer style={{ backgroundColor: theme.COLORS.SECONDARY }}>
+    <footer style={{ backgroundColor: 'var(--secondary-color)' }}>
       <Wrapper>
         <div className="flex items-center justify-between">
           <Link href="/">

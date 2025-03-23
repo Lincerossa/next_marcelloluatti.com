@@ -130,10 +130,6 @@ pre::after {
   color: #666;
 }
 
-.blog-section img {
-  margin: 2rem 0;
-}
-
 .canvasWrapper {
   position: relative;
 
@@ -141,4 +137,8 @@ pre::after {
     height: 100vh;
     background-color: var(--secondary-color)
   }
+}
+
+.react-markdown-section img {
+  margin: 2rem 0;
 }

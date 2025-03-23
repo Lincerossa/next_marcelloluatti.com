@@ -2,12 +2,12 @@ import { Post } from "@/types";
 import matter from 'gray-matter'
 import fs from 'fs'
 
-type GetPostsProps = () => Post[]
+type GetPosts = () => Post[]
 type Tag = {
   name: string
 }
 
-export const getPosts: GetPostsProps = () => {
+export const getPosts: GetPosts = () => {
   const posts: string[] = fs.readdirSync(`./public/posts/`)
   const results = posts.map((fileName) => {
     const project = matter(fs.readFileSync(`./public/posts/${fileName}`, 'utf8')).data
