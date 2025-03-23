@@ -31,7 +31,7 @@
     "three": "^0.174.0"
   },
   "hooks": {
-    "pre-commit": "npm run format"
+    "pre-commit": "pnpm run format"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
