@@ -2,13 +2,10 @@
 title: About
 content: >-
   I'm a passionate **front-end engineer**, with a strong focus on **React and
-  UX**, dedicated **building experiences** that will delight my users. 
+  UX**, dedicated to **building experiences** that will delight my users. 
 
 
-  I specialize in translating complex problems into elegant, user-friendly interfaces, ensuring both usability and maintainability.
-
-
-  I particularly enjoy working on **complex interactions** and multi-step workflows that require **product and design thinking**, where my intuition and knowledge help me navigate problems.
+  I particularly enjoy working in turning **complex interactions** and multi-step workflows that require **product and design thinking**, where my intuition and knowledge help me navigate problems.
 
 
   I work with whatever is needed, but my favorite tools are: **Next.js (ssr or ssg), React.js,  Styled Components, GraphQL, TypeScript, Jest, xState**
