@@ -111,4 +111,19 @@ storyline:
       - name: node scripts
       - name: jQuery
       - name: LESS
+    name: Supermoney
+    image: https://media.licdn.com/dms/image/v2/C4D0BAQFZow1nIt8YyA/company-logo_100_100/company-logo_100_100/0/1630493197050/supermoney_eu_logo?e=1748476800&v=beta&t=o6Cb8pFPQwX5dx5LlTZI1LwjaawAQPhYw6-aSu8VlUk
+  - role: Frontend Developer
+    company: Supermoney
+    date: 11-2015 - 05-2016
+    description: Managed the **frontend** of Italy’s first multi-sector comparison
+      portal. Developed **landing pages** and collaborated **across business
+      units**
+    tags:
+      - name: Bootstrap
+      - name: LESS
+      - name: JavaScript
+      - name: HTML5
+    image: https://media.licdn.com/dms/image/v2/C4D0BAQFZow1nIt8YyA/company-logo_100_100/company-logo_100_100/0/1630493197050/supermoney_eu_logo?e=1748476800&v=beta&t=o6Cb8pFPQwX5dx5LlTZI1LwjaawAQPhYw6-aSu8VlUk
+    name: Supermoney
 ---
