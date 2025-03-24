@@ -4,7 +4,7 @@ type TagsProps = {
   tags: string[];
 };
 const Tags: FC<TagsProps> = ({ tags }) => (
-  <ul className="flex">
+  <ul className="flex flex-wrap">
     {tags.map((tag) => (
       <li
         key={tag}

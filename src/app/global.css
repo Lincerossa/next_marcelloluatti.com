@@ -1,9 +1,14 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600,700&display=swap");
 @import "tailwindcss";
 
 :root {
   --primary-color: #ff2056;
   --secondary-color: #2b2e4a;
   --thirdary-color: #f08a5d;
+}
+
+@theme {
+  --font-display: "Raleway", "sans-serif"; 
 }
 
 ::selection {
@@ -95,7 +100,7 @@ html, body {
   &:after {
     content: "";
     position: absolute;
-    top: 55%;
+    top: 50%;
     transform: translate(0px, -50%);
     border-radius: 50%;
     right: -0.7rem;
