@@ -34,4 +34,11 @@ storyline:
       * Hackathon for Showcasing AI-Simulated Labs
     name: Cloud Academy
     image: https://media.licdn.com/dms/image/v2/D4D0BAQG8QuAdE-D4bw/company-logo_100_100/company-logo_100_100/0/1736177840377/qa_north_america_logo?e=1748476800&v=beta&t=t2NnAb6vqXGe4ewRUOQZJEP6Gh2pPs_utdYpxIDl5x0
+    tags:
+      - name: GraphQL
+      - name: Next.js
+      - name: xState
+      - name: TypeScript
+      - name: styled-components
+      - name: Interaction tests (msw)
 ---
