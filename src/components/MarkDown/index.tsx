@@ -5,9 +5,11 @@ type MarkDownProps = {
 };
 const MarkDown: FC<MarkDownProps> = ({ content }) => {
   return (
-    <ReactMarkdown urlTransform={(uri) => uri.replace('public', '')}>
-      {content}
-    </ReactMarkdown>
+    <div className="react-markdown-section">
+      <ReactMarkdown urlTransform={(uri) => uri.replace('public', '')}>
+        {content}
+      </ReactMarkdown>
+    </div>
   );
 };
 

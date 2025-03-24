@@ -11,7 +11,6 @@ type AboutProps = {
   content: string;
 };
 
-// TODO: lets evaluate if these hardcoded data should be moved to the CMS section
 const About: FC<AboutProps> = ({ title, items, content }) => (
   <>
     <PageHero title={title} />
