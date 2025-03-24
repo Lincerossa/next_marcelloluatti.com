@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import ReactMarkdown from 'react-markdown';
 type MarkDownProps = {
   content: string;
@@ -12,7 +12,7 @@ const MarkDown: FC<MarkDownProps> = ({ content }) => {
         components={{
           code: ({ node }) => {
             return (
-              <SyntaxHighlighter language="javascript" style={dark}>
+              <SyntaxHighlighter language="javascript" style={dracula}>
                 {(node?.children?.[0] as { value: string })?.value ?? ''}
               </SyntaxHighlighter>
             );
