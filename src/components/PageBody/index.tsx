@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import ReactMarkdown from 'react-markdown';
 import type { PageBodyProps } from './types';
+import MarkDown from '../MarkDown';
 
 const PageBody: FC<PageBodyProps> = ({ description, content, children }) => {
   return (
@@ -10,9 +10,7 @@ const PageBody: FC<PageBodyProps> = ({ description, content, children }) => {
       )}
       {content && (
         <div className="react-markdown-section py-8 text-xl tracking-wide">
-          <ReactMarkdown urlTransform={(uri) => uri.replace('public', '')}>
-            {content}
-          </ReactMarkdown>
+          <MarkDown content={content} />
         </div>
       )}
       {children && children}

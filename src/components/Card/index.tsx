@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import type { CardProps } from './types';
 import Image from 'next/image';
+import Tags from '../Tags';
 
 const Card: FC<CardProps> = ({ title, tags, description, image }) => {
   return (
@@ -19,15 +20,9 @@ const Card: FC<CardProps> = ({ title, tags, description, image }) => {
         <div className="tracking-wide text-3xl font-light leading-tight mb-1 text-white">
           {title}
         </div>
-        <ul className="flex mb-3">
-          {tags.map((tag) => (
-            <li
-              key={tag}
-              className="mr-4 text-[0.625rem] font-bold uppercase red-dot relative">
-              {tag}
-            </li>
-          ))}
-        </ul>
+        <div className="mb-3">
+          <Tags tags={tags} />
+        </div>
         <p className="font-thin text-xs">{description}</p>
       </div>
     </div>
