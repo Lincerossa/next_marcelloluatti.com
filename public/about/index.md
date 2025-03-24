@@ -92,4 +92,23 @@ storyline:
       - name: git
     image: https://media.licdn.com/dms/image/v2/C4D0BAQFZow1nIt8YyA/company-logo_100_100/company-logo_100_100/0/1630493197050/supermoney_eu_logo?e=1748476800&v=beta&t=o6Cb8pFPQwX5dx5LlTZI1LwjaawAQPhYw6-aSu8VlUk
     name: supermoney
+  - role: " Frontend Developer ||"
+    company: Supermoney
+    date: 05-2016 - 12-2016
+    description: >-
+      Key contributions:
+
+
+      * Developed **user flows** for **lead generation**
+
+      * Company homepage
+
+      * Customized a **web chat system** with multi-user options (chat with six operators, call-back requests, and lead generation).
+
+      * Developed an **email-preprocessor** with Gulp and Node.js to automate email template creation.
+    tags:
+      - name: gulp
+      - name: node scripts
+      - name: jQuery
+      - name: LESS
 ---
