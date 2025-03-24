@@ -23,8 +23,14 @@ collections:
           - { label: Company, name: company, widget: string }
           - { label: Date, name: date, widget: string }
           - { label: Description, name: description, widget: markdown }
-          - { label: Name, name: name, widget: string }
+          - label: 'Tags'
+            name: 'tags'
+            widget: 'list'
+            summary: '{{fields.name}}'
+            fields:
+              - { label: Name, name: name, widget: string }
           - { label: 'Image', name: 'image', widget: 'image' }
+          - { label: Name, name: name, widget: string }
   - name: 'projects'
     label: 'Projects'
     folder: 'public/projects/'

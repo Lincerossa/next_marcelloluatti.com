@@ -95,7 +95,7 @@ html, body {
   &:after {
     content: "";
     position: absolute;
-    top: 55%;
+    top: 50%;
     transform: translate(0px, -50%);
     border-radius: 50%;
     right: -0.7rem;
@@ -137,8 +137,4 @@ pre::after {
     height: 100vh;
     background-color: var(--secondary-color)
   }
-}
-
-.react-markdown-section img {
-  margin: 2rem 0;
 }
