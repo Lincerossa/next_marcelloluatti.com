@@ -78,4 +78,18 @@ storyline:
       - name: Storybook
       - name: React
       - name: Next.js
+  - role: Lead Frontend Developer
+    company: Supermoney
+    date: 12-2016 - 05-2017
+    description: >-
+      * Redesigned the news section (approx. 30,000 daily views) using ES6 with
+      Gulp task runner 
+
+      * website full redesign
+    tags:
+      - name: gulp
+      - name: less
+      - name: git
+    image: https://media.licdn.com/dms/image/v2/C4D0BAQFZow1nIt8YyA/company-logo_100_100/company-logo_100_100/0/1630493197050/supermoney_eu_logo?e=1748476800&v=beta&t=o6Cb8pFPQwX5dx5LlTZI1LwjaawAQPhYw6-aSu8VlUk
+    name: supermoney
 ---
