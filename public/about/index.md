@@ -58,4 +58,24 @@ storyline:
       - name: React
       - name: TDD
       - name: ssg
+  - role: Frontend Developer
+    company: Alkemy
+    date: 05/2017 - 10/2019
+    description: >-
+      * **Salini Impregilo (Dashboard Tool):** Designed the software
+      architecture for complex data management. Built a GraphQL server on
+      Prisma. Frontend with React, Redux, and Jest.
+
+      * **Corneliani (E-commerce):** Developed an e-commerce platform using Next.js, React, Redux, and Storybook. Implemented a GraphQL layer to connect WordPress (CMS) and Magento (e-commerce).
+
+      * **Fondoambiente (Institutional Website):** Built with Node.js, React, Redux, Next.js, and Express. Used headless WordPress as CMS and applied React patterns for scalability.
+
+      * **Moleskine (Blog):** Developed using Laravel, Blade, Sass (BEM), and Webpack.
+    image: https://media.licdn.com/dms/image/v2/D4D0BAQFDNNIY0w68Nw/company-logo_100_100/company-logo_100_100/0/1689070542438/alkemy_enabling_evolution_logo?e=1748476800&v=beta&t=OLFZWmrPY7aWpWgBx745uXO-L5jIipGwxUnqwb_Ded4
+    name: alkemy
+    tags:
+      - name: GraphQL
+      - name: Storybook
+      - name: React
+      - name: Next.js
 ---
