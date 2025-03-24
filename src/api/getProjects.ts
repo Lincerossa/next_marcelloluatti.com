@@ -19,7 +19,7 @@ export const getProjects: GetProjects = () => {
       content: project.content,
       tags: project.tags?.map((tag: Tag) => tag.name) ?? [], 
       image: {
-        src: project.image.split('public/')[1],
+        src: project.image,
         description: 'description', // TODO
         alt: 'Alt', // TODO
       },

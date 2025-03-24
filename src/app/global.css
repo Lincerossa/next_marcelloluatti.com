@@ -12,6 +12,10 @@
   --font-display: "Raleway", "sans-serif"; 
 }
 
+.secondary-color {
+  color: var(--secondary-color);
+}
+
 ::selection {
   color: rgb(255, 255, 255);
   background: var(--primary-color);
