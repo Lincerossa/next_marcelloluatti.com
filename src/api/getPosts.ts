@@ -10,16 +10,16 @@ type Tag = {
 export const getPosts: GetPosts = () => {
   const posts: string[] = fs.readdirSync(`./public/posts/`)
   const results = posts.map((fileName) => {
-    const project = matter(fs.readFileSync(`./public/posts/${fileName}`, 'utf8')).data
+    const post = matter(fs.readFileSync(`./public/posts/${fileName}`, 'utf8')).data
     return {
-      title: project.title,
-      slug: project.slug,
-      description: project.description,
-      shortDescription: project.shortDescription,
-      content: project.content,
-      tags: project.tags?.map((tag: Tag) => tag.name) ?? [], 
+      title: post.title,
+      slug: post.slug,
+      description: post.description,
+      shortDescription: post.shortDescription,
+      content: post.content,
+      tags: post.tags?.map((tag: Tag) => tag.name) ?? [], 
       image: {
-        src: project.image.split('public/')[1],
+        src: post.image,
         description: 'description', // TODO
         alt: 'Alt', // TODO
       },
