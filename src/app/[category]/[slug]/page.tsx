@@ -43,7 +43,7 @@ export default async function ItemPage({ params }: ItemPage) {
       const project = projects.find((project) => project.slug === slug);
       return (
         <ProjectPage
-          title={slug}
+          title={project?.title ?? ''}
           content={project?.content ?? ''}
           description={project?.description ?? ''}
         />
@@ -52,7 +52,7 @@ export default async function ItemPage({ params }: ItemPage) {
       const post = posts.find((project) => project.slug === slug);
       return (
         <PostPage
-          title={slug}
+          title={post?.title ?? ''}
           content={post?.content ?? ''}
           description={post?.description ?? ''}
         />

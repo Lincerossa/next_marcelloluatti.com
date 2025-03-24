@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600,700&display=swap");
 @import "tailwindcss";
 
+
 :root {
   --primary-color: #ff2056;
   --secondary-color: #2b2e4a;
@@ -25,6 +26,7 @@ html, body {
     cursor: none;
   }
 }
+
 
 .glitch {
   line-height: 1;
@@ -108,31 +110,6 @@ html, body {
     height: 0.4rem;
     background: var(--primary-color);
   }
-}
-
-pre {
-  background-color: #f7f7f7;
-  border: 1px solid #ddd;
-  border-radius: 3px;
-  padding: 2px 5px;
-  font-size: 14px;
-  font-family: 'Monaco', 'Consolas', 'Courier New', monospace;
-  color: #333;
-  white-space: pre-wrap;
-}
-
-pre::before {
-  content: "\`";
-  font-size: 16px;
-  margin-right: 5px;
-  color: #666;
-}
-
-pre::after {
-  content: "\`";
-  font-size: 16px;
-  margin-left: 5px;
-  color: #666;
 }
 
 .canvasWrapper {

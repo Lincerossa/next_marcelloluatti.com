@@ -7,7 +7,7 @@ const PageHero: FC<PageHeroProps> = ({ title }) => {
         backgroundColor: 'var(--secondary-color)',
       }}
       className=" min-h-screen flex items-center justify-center">
-      <h1 data-content={title} className="text-6xl md:text-[10rem] glitch">
+      <h1 data-content={title} className="text-6xl  md:text-[10rem] glitch">
         {title}
       </h1>
     </div>
