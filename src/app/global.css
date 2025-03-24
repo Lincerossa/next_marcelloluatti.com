@@ -95,7 +95,7 @@ html, body {
   &:after {
     content: "";
     position: absolute;
-    top: 50%;
+    top: 55%;
     transform: translate(0px, -50%);
     border-radius: 50%;
     right: -0.7rem;
@@ -132,9 +132,25 @@ pre::after {
 
 .canvasWrapper {
   position: relative;
-
   & canvas {
     height: 100vh;
     background-color: var(--secondary-color)
   }
+}
+
+.react-markdown-section img {
+  margin: 2rem 0;
+}
+
+.react-markdown-section p {
+  margin-bottom: 0.5rem;
+}
+
+.react-markdown-section li {
+  margin-bottom: 0.5rem;
+}
+
+.react-markdown-section li::before {
+  content: "\2022";
+  margin-right: 0.5rem;
 }
