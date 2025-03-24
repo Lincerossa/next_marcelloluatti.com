@@ -12,9 +12,6 @@ content: >-
 
 
   I work with whatever is needed, but my favorite tools are: **Next.js (ssr or ssg), React.js,  Styled Components, GraphQL, TypeScript, Jest, xState**
-
-
-  ![](https://res.cloudinary.com/dmgymopan/image/upload/v1614077032/readme%20images/asd_lyzndn.png)
 storyline:
   - role: Frontend Engineer II
     company: Cloud Academy
@@ -41,4 +38,24 @@ storyline:
       - name: TypeScript
       - name: styled-components
       - name: Interaction tests (msw)
+  - role: Frontend Engineer
+    company: e-globe solutions AG/SA
+    date: 10/2019 - 09/2021
+    description: >-
+      I'm the main Frontend Engineer working with React, Redux, ES6, Node.js,
+      TDD, CI, static site development (Gatsby, Next.js), monorepo, versioning,
+      and release.
+
+
+      * Updated old legacy product code.
+
+      * Built a Business Process Model software from scratch to production.
+    image: https://media.licdn.com/dms/image/v2/C4D0BAQFxb6F-_wJSsA/company-logo_100_100/company-logo_100_100/0/1630536779725/e_globe_solutions_ag_logo?e=1748476800&v=beta&t=9vlOQhhXrIuLEFdszQM9BV_u9u1X6CZrfz5yzHB7jsA
+    name: egs
+    tags:
+      - name: Next.js
+      - name: Redux
+      - name: React
+      - name: TDD
+      - name: ssg
 ---
