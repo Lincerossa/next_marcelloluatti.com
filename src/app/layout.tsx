@@ -40,7 +40,7 @@ export default function RootLayout({
           async
           src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
       </head>
-      <body>
+      <body className="font-display">
         {children}
         <MagicMouse />
       </body>

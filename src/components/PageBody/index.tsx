@@ -6,10 +6,10 @@ const PageBody: FC<PageBodyProps> = ({ description, content, children }) => {
   return (
     <>
       {description && (
-        <div className="py-8 text-xl tracking-wide">{description}</div>
+        <div className="py-8 text-lg tracking-wide">{description}</div>
       )}
       {content && (
-        <div className="py-8 text-xl tracking-wide">
+        <div className="py-8 text-lg tracking-wide">
           <MarkDown content={content} />
         </div>
       )}
