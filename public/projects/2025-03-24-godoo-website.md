@@ -1,5 +1,6 @@
 ---
 title: Godoo website
+order: 70
 description: Product website developed using gatsby + Md
 shortDescription: Product website developed using gatsby + Md
 slug: godoo-website
