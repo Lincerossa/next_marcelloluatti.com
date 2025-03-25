@@ -17,6 +17,7 @@ export const getProjects: GetProjects = () => {
       description: project.description,
       shortDescription: project.shortDescription,
       content: project.content,
+      order: project.order,
       tags: project.tags?.map((tag: Tag) => tag.name) ?? [], 
       image: {
         src: project.image,
@@ -24,6 +25,6 @@ export const getProjects: GetProjects = () => {
         alt: 'Alt', // TODO
       },
     }
-  })
+  }).sort((a, b) => a.order > b.order ? -1 : 1)
   return results
 };
