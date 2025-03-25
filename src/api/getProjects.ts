@@ -1,6 +1,7 @@
 import { Project } from "@/types";
 import matter from 'gray-matter'
 import fs from 'fs'
+import { or } from "three/tsl";
 
 type GetProjects = () => Project[]
 type Tag = {
@@ -14,6 +15,7 @@ export const getProjects: GetProjects = () => {
     return {
       title: project.title,
       slug: project.slug,
+      order: project.order,
       description: project.description,
       shortDescription: project.shortDescription,
       content: project.content,
@@ -25,5 +27,5 @@ export const getProjects: GetProjects = () => {
       },
     }
   })
-  return results
+  return results.sort((a, b) => a.order > b.order ? -1 : 1)
 };

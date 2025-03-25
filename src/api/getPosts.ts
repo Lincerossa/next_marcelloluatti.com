@@ -17,6 +17,7 @@ export const getPosts: GetPosts = () => {
       description: post.description,
       shortDescription: post.shortDescription,
       content: post.content,
+      order: post.order,
       tags: post.tags?.map((tag: Tag) => tag.name) ?? [], 
       image: {
         src: post.image,
@@ -25,5 +26,5 @@ export const getPosts: GetPosts = () => {
       },
     }
   })
-  return results
+  return results.sort((a, b) => a.order > b.order ? -1 : 1)
 };
