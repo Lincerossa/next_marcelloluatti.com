@@ -1,5 +1,6 @@
 ---
 title: Cloud Academy Labs
+order: 100
 description: Online e-learning platform for Aws cloud training
 shortDescription: Online e-learning platform for Aws cloud training
 slug: cloud-academy-labs
