@@ -11,8 +11,6 @@ export const getProjects: GetProjects = () => {
   const projects: string[] = fs.readdirSync(`./public/projects/`)
   const results = projects.map((fileName) => {
     const project = matter(fs.readFileSync(`./public/projects/${fileName}`, 'utf8')).data
-
-    console.log('project', project)
     return {
       title: project.title,
       slug: project.slug,
