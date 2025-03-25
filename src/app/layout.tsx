@@ -5,14 +5,18 @@ import './global.css';
 // these are the main website metadata, potentially overriden by the single nested page
 export const metadata: Metadata = {
   title: 'Marcello Luatti | Frontend Engineer',
-  description:
-    "Welcome to my website! I'm Marcello Luatti, a 10-year-old boy passionate about technology and programming.",
-  keywords: ['Marcello Luatti', 'boy', 'technology', 'programming', 'website'],
+  description: 'Innovative and passionate frontend developer',
+  keywords: [
+    'Marcello Luatti',
+    'frontend engineer',
+    'web development',
+    'technology',
+    'programming',
+  ],
   robots: 'index, follow',
   openGraph: {
     title: "Marcello Luatti's Website",
-    description:
-      "Welcome to my website! I'm Marcello Luatti, a 10-year-old boy passionate about technology and programming.",
+    description: 'Passionate front-end engineer',
     images: 'https://avatars.githubusercontent.com/u/16242899?v=4?s=400',
     url: 'https://marcelloluatti.com',
     type: 'website',
