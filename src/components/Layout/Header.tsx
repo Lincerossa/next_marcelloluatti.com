@@ -17,7 +17,7 @@ const Header: FC<HeaderProps> = ({ items }) => {
   function handleGetDirection() {
     setScrollStatus((prevState) => ({
       position: window.scrollY,
-      initial: window.scrollY < 250,
+      initial: window.scrollY < 100,
       direction:
         window.scrollY > prevState.position && window.scrollY > 600
           ? 'down'

@@ -25,7 +25,6 @@ export async function generateStaticParams() {
         }));
       }
     })
-    .filter((e) => e !== undefined)
     .flat();
 }
 
