@@ -10,5 +10,25 @@ tags:
   - name: npm
   - name: versioning
   - name: schema-driven-ui-pattern
-content: link to [Bpmn](/projects/bpmn)
+content: >-
+  ### **GOAL**
+
+
+  While developing a SaaS solution for the [Bpmn](<>) (Business Process Model and Notation) project, I needed a way to manage **additional metadata** that could be injected into each BPMN element. This would enable users to dynamically enrich workflows, enhancing **flexibility and adaptability**.
+
+
+  ### **HOW**
+
+
+  To achieve this, I implemented a **Schema-Driven UI** pattern, allowing a **dynamic JSON-based interface** to be attached to each BPMN element.
+
+
+  I also built a **custom wrapper library** around **React Hook Form**, streamlining form management and ensuring a smooth developer experience (published at that time to npm)
+
+
+
+
+
+
+  [](/projects/bpmn)
 ---
