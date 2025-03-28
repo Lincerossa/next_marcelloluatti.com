@@ -21,7 +21,13 @@ const Home: FC<HomeProps> = ({ title, items, content }) => (
     </Wrapper>
 
     <Wrapper>
-      <h2 className="text-2xl font-bold mb-4">My Recent story</h2>
+      <h2
+        style={{
+          color: 'var(--secondary-color)',
+        }}
+        className="text-2xl font-bold mb-4">
+        My recent story
+      </h2>
       <StoryLine items={items.slice(0, 2)} />
     </Wrapper>
     <div
