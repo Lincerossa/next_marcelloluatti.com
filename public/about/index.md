@@ -1,14 +1,14 @@
 ---
 title: About
 content: >-
-  I'm a passionate **front-end engineer**, with a strong focus on **React and
-  UX**, dedicated to **building experiences** that will delight my users. 
+  I'm a **passionate front-end engineer**, with a strong focus on React and UX,
+  dedicated to building experiences that will delight my users.
 
 
-  I particularly enjoy working in turning **complex interactions** and multi-step workflows that require **product and design thinking**, where my intuition and knowledge help me navigate problems.
+  I particularly enjoy working with complex interactions and multi-step workflows that require product and design thinking.
 
 
-  I work with whatever is needed, but my favorite tools are: **Next.js (ssr or ssg), React.js,  Styled Components, GraphQL, TypeScript, Jest, xState**
+  My current favorite tools are: **Next.js, React.js, GraphQL, TypeScript, Jest, xState, Styled-Components/tailwindcss**
 storyline:
   - role: Frontend Engineer II
     company: Cloud Academy
