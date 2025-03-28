@@ -1,6 +1,8 @@
 import MagicMouse from '@/components/MagicMouse';
 import type { Metadata, Viewport } from 'next';
 import './global.css';
+import { getCategories } from '@/api/getCategories';
+import Layout from '@/components/Layout';
 
 // these are the main website metadata, potentially overriden by the single nested page
 export const metadata: Metadata = {
@@ -30,11 +32,12 @@ export const viewport: Viewport = {
   userScalable: false,
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const categories = await getCategories();
   return (
     <html lang="en">
       <head>
@@ -44,7 +47,7 @@ export default function RootLayout({
           src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
       </head>
       <body className="font-display">
-        {children}
+        <Layout items={categories}>{children}</Layout>
         <MagicMouse />
       </body>
     </html>

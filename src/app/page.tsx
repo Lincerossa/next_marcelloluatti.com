@@ -1,7 +1,14 @@
-import { getCategories } from '@/api/getCategories';
+import { getAbout } from '@/api/getAbout';
 import HomePage from '@/containers/Home';
 
 export default async function Page() {
-  const categories = await getCategories();
-  return <HomePage items={categories} />;
+  const about = await getAbout();
+
+  return (
+    <HomePage
+      title="Hi! 👋 My name is Marcello"
+      items={about.items}
+      content={about.content}
+    />
+  );
 }
