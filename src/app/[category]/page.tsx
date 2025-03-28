@@ -1,8 +1,10 @@
 import { getCategories } from '@/api/getCategories';
 import { getPosts } from '@/api/getPosts';
 import { getProjects } from '@/api/getProjects';
+import { getAbout } from '@/api/getAbout';
 import PostsPage from '@/containers/Posts';
 import ProjectsPage from '@/containers/Projects';
+import AboutPage from '@/containers/About';
 import type { Category } from '@/types';
 
 export async function generateStaticParams() {
@@ -27,7 +29,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
   const categories = await getCategories();
   const posts = await getPosts();
   const projects = await getProjects();
-
+  const about = await getAbout();
   const categoryTitle =
     categories.find(({ slug }) => slug === category)?.label ?? '';
 
@@ -52,6 +54,15 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
           }))}
         />
       );
+    case 'about':
+      return (
+        <AboutPage
+          title={categoryTitle}
+          items={about.items}
+          content={about.content}
+        />
+      );
+
     default:
       return null;
   }

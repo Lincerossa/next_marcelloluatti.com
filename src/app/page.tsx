@@ -1,12 +1,12 @@
 import { getAbout } from '@/api/getAbout';
-import AboutPage from '@/containers/About';
+import HomePage from '@/containers/Home';
 
 export default async function Page() {
   const about = await getAbout();
 
   return (
-    <AboutPage
-      title="I am Marcello Luatti"
+    <HomePage
+      title="Hi! 👋 My name is Marcello"
       items={about.items}
       content={about.content}
     />

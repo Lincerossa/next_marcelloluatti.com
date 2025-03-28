@@ -4,13 +4,14 @@
 
 :root {
   --primary-color: #ff2056;
-  --secondary-color: #2b2e4a;
+  --secondary-color: #1e0032;
   --thirdary-color: #f08a5d;
 }
 
 @theme {
   --font-display: "Raleway", "sans-serif"; 
 }
+
 
 .secondary-color {
   color: var(--secondary-color);

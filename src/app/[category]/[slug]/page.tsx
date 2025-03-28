@@ -11,6 +11,7 @@ export async function generateStaticParams() {
   const projects = await getProjects();
 
   return categories
+    .filter((catefory) => catefory.slug !== 'about')
     .map((category) => {
       if (category.slug === 'posts') {
         return posts.map((post) => ({

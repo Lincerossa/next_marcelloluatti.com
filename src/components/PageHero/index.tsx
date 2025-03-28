@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { Canvas, useFrame } from '@react-three/fiber';
 import { PageHeroProps } from './types';
 import Wrapper from '../Wrapper';
 const PageHero: FC<PageHeroProps> = ({ title }) => {

@@ -8,6 +8,10 @@ type GetCategories = () => {
 
 export const getCategories: GetCategories = () => ([
   {
+    label: 'About',
+    slug: 'about',
+  },
+  {
     label: 'Projects',
     slug: 'projects',
   },
