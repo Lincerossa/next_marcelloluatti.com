@@ -344,5 +344,20 @@ content: >-
 
   ### 
 
-  [](/projects/bpmn)
+  [](/projects/bpmn)**THE CONTEXT**
+
+
+  **Note:** This React Hook Form wrapper was originally developed in 2021, so the dependencies are still based on older versions. Some adjustments may be required to align with the latest updates.
+
+
+  ```
+    "dependencies": {
+      "form-one": "1.4.2",
+      "prop-types": "15.7.2",
+      "react": "17.0.1",
+      "react-dom": "17.0.1",
+      "react-scripts": "4.0.0",
+      "yup": "0.32.8"
+    },
+  ```
 ---
