@@ -10,12 +10,12 @@ export const metadata: Metadata = {
     'Marcello Luatti',
     'frontend engineer',
     'web development',
-    'technology',
-    'programming',
+    'React',
+    'Next.js',
   ],
   robots: 'index, follow',
   openGraph: {
-    title: "Marcello Luatti's Website",
+    title: 'Marcello Luatti | Frontend Engineer',
     description: 'Passionate front-end engineer',
     images: 'https://avatars.githubusercontent.com/u/16242899?v=4?s=400',
     url: 'https://marcelloluatti.com',
@@ -25,7 +25,6 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: 'light',
-  width: '100vw',
   initialScale: 1,
   maximumScale: 1,
   userScalable: false,
