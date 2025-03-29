@@ -11,20 +11,91 @@ tags:
   - name: Next.js
   - name: github actions
 content: >-
-  The previous version of the current website was using
+  The goal of the project was to **simplify content management for a static
+  website**. To achieve this, I adopted a **JSON-based approach**, defining
+  everything from the route structure to the props injected into each component.
 
 
+  ```
+
+  const data = {
+    routes: [
+      {
+        slug: '/',
+        label: 'Marcello Luatti',
+        layout: 'full',
+        metaTitle: 'Marcello Luatti',
+        metaDescription: 'Front End Engineer based by the Lake Como',
+        metaImage: 'https://avatars.githubusercontent.com/u/16242899?v=4?s=400',
+        hidden: true,
+        componentIds: ['R3F_homepage'],
+      },
+      {
+        slug: 'about',
+        label: 'About',
+        metaTitle: 'Marcello Luatti | About',
+        metaDescription: 'Marcello Luatti | About',
+        metaImage: null,
+        componentIds: ['RichText_about', 'Image_about'],
+      },
+      ...
+  ```
 
 
-  * Next 10
+  \
 
-  * Node 12.18
+  Then, in a single dynamic route:\
 
-  * Styled-components
+  \
 
-  * Next.js
+  `src/pages/[...dynamic].js`
 
-  * Github actions
+
+  ```
+
+  export async function getStaticPaths() {
+    const { routes } = data
+    return {
+      paths: routes.map(({ slug }) => ({ params: {
+        dynamic: slug.split('/'),
+      } })),
+      fallback: false,
+    }
+  }
+
+
+  export async function getStaticProps({ params: { dynamic } }) {
+    const { routes, components } = data
+    const route = routes.find((e) => e.slug === dynamic.join('/'))
+    return {
+      props: {
+        route,
+        components: route.componentIds.map((component) => components.find(({ id }) => id === component)),
+      },
+    }
+  }
+
+  ```
+
+
+  \
+
+  \
+
+  tech stack used:
+
+
+  ```
+
+  Next.js (ssg)
+
+  Styled-components
+
+  Github actions
+
+  netlify
+
+  ```
 
 
 
