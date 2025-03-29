@@ -1,4 +1,3 @@
-import PageBody from '@/components/PageBody';
 import PageHero from '@/components/PageHero';
 import StoryLine from '@/components/StoryLine';
 import type { StoryLineProps } from '@/components/StoryLine/types';
