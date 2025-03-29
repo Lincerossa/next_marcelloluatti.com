@@ -21,7 +21,7 @@ content: >-
 
   * **Migrating the whole legacy labs flow** to the modern front-end stack
 
-  * Deploying the **new AI lab assistant** with **state machine logic**, called [ELA](<>)
+  * Deploying the **new AI lab assistant** with **state machine logic**, called [ELA](https://www.qa.com/en-us/resources/blog/introducing-ela-your-expert-learning-assistant/)
 
   * Releasing new SSR landing and session pages for labs using **Next.js.**
 
@@ -35,10 +35,6 @@ content: >-
 
 
   The goal is to enhance the Labs experience by integrating modern technologies, improving performance, and leveraging AI-driven solutions to create an intuitive and intelligent lab environment experience
-
-
-
-
 
 
   ![](https://res.cloudinary.com/dmgymopan/image/upload/v1729694627/Screenshot_2024-10-23_alle_16.43.18_kn6qy0.png)
