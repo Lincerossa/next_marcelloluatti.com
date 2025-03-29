@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import { PageHeroProps } from './types';
 import Wrapper from '../Wrapper';
+import Reader from '../Reader';
 const PageHero: FC<PageHeroProps> = ({ title }) => {
   return (
     <div
@@ -8,9 +9,9 @@ const PageHero: FC<PageHeroProps> = ({ title }) => {
         backgroundColor: 'var(--secondary-color)',
       }}>
       <Wrapper>
-        <div className="bg-color-secondary h-[45vh] relative flex items-start justify-start">
-          <h1 data-content={title} className="text-4xl sm:text-6xl glitch">
-            {title}
+        <div className="h-[45vh] relative flex items-center">
+          <h1 className="text-4xl font-bold sm:text-6xl text-white tracking-wide">
+            <Reader text={title} />
           </h1>
         </div>
       </Wrapper>

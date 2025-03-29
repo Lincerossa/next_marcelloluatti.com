@@ -1,8 +1,8 @@
 import { getCategories } from '@/api/getCategories';
 import { getPosts } from '@/api/getPosts';
 import { getProjects } from '@/api/getProjects';
-import PostPage from '@/containers/Post';
-import ProjectPage from '@/containers/Project';
+import PostPage from '@/pages/Post';
+import ProjectPage from '@/pages/Project';
 import { Category } from '@/types';
 
 export async function generateStaticParams() {

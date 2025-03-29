@@ -3,7 +3,7 @@ import fs from 'fs'
 
 import { StoryLineProps } from "@/components/StoryLine/types";
 
-type GetAbout = () => {
+type GetStoryline = () => {
   content: string;
   items: StoryLineProps['items']
 }
@@ -17,7 +17,7 @@ type StoryFromFs = {
   tags: {name: string}[]
 }
 
-export const getAbout: GetAbout = () => {
+export const getStoryline: GetStoryline = () => {
 
   const aboutFolder: string[] = fs.readdirSync(`./public/about/`)
   const results = aboutFolder.map((fileName) => {
