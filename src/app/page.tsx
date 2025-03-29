@@ -1,4 +1,3 @@
-import { getCategories } from '@/api/getCategories';
 import { getStoryline } from '@/api/getStoryline';
 import HomePage from '@/pages/Home';
 
