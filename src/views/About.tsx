@@ -7,10 +7,9 @@ import { FC } from 'react';
 type AboutProps = {
   title: string;
   items: StoryLineProps['items'];
-  content: string;
 };
 
-const About: FC<AboutProps> = ({ title, items, content }) => (
+const About: FC<AboutProps> = ({ title, items }) => (
   <>
     <PageHero title={title} />
     <Wrapper>

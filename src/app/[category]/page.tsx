@@ -55,13 +55,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
         />
       );
     case 'about':
-      return (
-        <AboutPage
-          title={categoryTitle}
-          items={storyline.items}
-          content={storyline.content}
-        />
-      );
+      return <AboutPage title={categoryTitle} items={storyline.items} />;
 
     default:
       return null;
