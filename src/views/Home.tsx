@@ -15,14 +15,14 @@ const Home: FC<HomeProps> = ({ title, content, items }) => (
   <>
     <PageHero title={title} />
     <Wrapper>
-      <div className="py-16 text-3xl tracking-loose leading-relaxed">
+      <div className="py-6 md:py-16 text-xl md:text-3xl tracking-loose leading-relaxed">
         <MarkDown content={content} />
       </div>
     </Wrapper>
 
     <div
       style={{ backgroundColor: 'var(--secondary-color)' }}
-      className="py-12 flex items-center">
+      className="py-4 md:py-12 flex items-center">
       <Wrapper>
         <ListOfCards items={items} maxCol={2} />
       </Wrapper>

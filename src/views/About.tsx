@@ -15,9 +15,9 @@ const About: FC<AboutProps> = ({ title, items, content }) => (
   <>
     <PageHero title={title} />
     <Wrapper>
-      <PageBody content={content}>
+      <div className="py-8">
         <StoryLine items={items} />
-      </PageBody>
+      </div>
     </Wrapper>
   </>
 );

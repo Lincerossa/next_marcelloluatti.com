@@ -10,7 +10,7 @@ const PageHero: FC<PageHeroProps> = ({ title }) => {
       }}>
       <Wrapper>
         <div className="h-[45vh] relative flex items-center">
-          <h1 className="text-4xl font-bold sm:text-6xl text-white tracking-wide">
+          <h1 className="cool text-4xl md:text-6xl font-bold text-white tracking-wide">
             <Reader text={title} />
           </h1>
         </div>
