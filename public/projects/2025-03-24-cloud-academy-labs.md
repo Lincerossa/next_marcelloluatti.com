@@ -11,15 +11,35 @@ tags:
   - name: Storybook
   - name: Msw (interaction tests)
 content: >-
-  I work in the Labs development team, managing the front end in an NX monorepo
-  with React, TypeScript, GraphQL, Next.js, and xState. Key projects include:
+  My role in this project involves managing the front end within an NX monorepo
+  using **React, TypeScript, GraphQL, Next.js, and xState.**\
+
+  \
+
+  Key projects I’ve developed:[](https://www.qa.com/en-us/resources/blog/introducing-ela-your-expert-learning-assistant/)
 
 
-  * Deployed the new AI lab assistant with state machine logic.
+  * **Migrating the whole legacy labs flow** to the modern front-end stack
 
-  * Migrated the legacy labs flow to the new front-end stack.
+  * Deploying the **new AI lab assistant** with **state machine logic**, called [ELA](<>)
 
-  * Released new SSR landing pages for labs using Next.js.
+  * Releasing new SSR landing and session pages for labs using **Next.js.**
 
-  * Hackathon for Showcasing AI-Simulated Labs
+  * Participating in a **hackathon** to showcase **AI-simulated labs.**
+
+
+  All these projects have been **rolled out progressively** using  [LD](https://launchdarkly.com/)  ensuring continuous improvements to the Labs ecosystem.
+
+
+  Development and deployment occur within the **NX monorepo**, enabling efficient collaboration between all the teams.
+
+
+  The goal is to enhance the Labs experience by integrating modern technologies, improving performance, and leveraging AI-driven solutions to create an intuitive and intelligent lab environment experience
+
+
+
+
+
+
+  ![](https://res.cloudinary.com/dmgymopan/image/upload/v1729694627/Screenshot_2024-10-23_alle_16.43.18_kn6qy0.png)
 ---
