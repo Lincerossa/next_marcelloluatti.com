@@ -24,7 +24,7 @@ const Home: FC<HomeProps> = ({ title, content, items }) => (
       style={{ backgroundColor: 'var(--secondary-color)' }}
       className="py-12 flex items-center">
       <Wrapper>
-        <ListOfCards items={items} cols={[1, 2, 2]} />
+        <ListOfCards items={items} maxCol={2} />
       </Wrapper>
     </div>
   </>
