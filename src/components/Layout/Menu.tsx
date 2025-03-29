@@ -36,13 +36,17 @@ const MenuItems: FC<MenuItemsProps> = ({ items, pathname, initial, mode }) => (
 
 const Mobile: FC<MenuProps> = (props) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
-
   useEffect(() => {
     if (typeof window !== 'undefined') {
       window.document.getElementsByTagName('html')[0].style.overflowY =
         isMenuOpen ? 'hidden' : 'visible';
     }
   }, [isMenuOpen]);
+
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [props.pathname]);
+
   return (
     <>
       <Link href="#" onClick={() => setMenuOpen(!isMenuOpen)}>

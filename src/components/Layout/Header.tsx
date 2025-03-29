@@ -54,7 +54,7 @@ const Header: FC<HeaderProps> = ({ items }) => {
           <Link href="/">
             <Logo width={80} height={80} fill={initial ? 'white' : 'auto'} />
           </Link>
-          <Menu pathname={pathname} items={items} initial={initial} />
+          <Menu pathname={pathname ?? ''} items={items} initial={initial} />
         </div>
       </Wrapper>
     </header>

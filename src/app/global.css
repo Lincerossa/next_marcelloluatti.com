@@ -12,7 +12,6 @@
   --font-display: "Raleway", "sans-serif"; 
 }
 
-
 .secondary-color {
   color: var(--secondary-color);
 }
@@ -32,12 +31,27 @@ html, body {
   }
 }
 
+.cool {
+  position: relative;
+  &:after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 5px;
+    bottom: -5px;
+    left: 2px;
+    background-color: var(--primary-color);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+}
 
 .glitch {
   line-height: 1;
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
   position:absolute;
+  text-transform: uppercase;
   top: 50%;
   left: 0;
   transform: translate(0%, -50%);
@@ -58,48 +72,53 @@ html, body {
   }
   &:after {
     color: #0ff;
+    transform: translate(-5px, -3px);
     z-index: -2;
   }
   &:before {
-    color: #bf1650;
+    color: #ff2056;
     transform: translate(-2px, 2px);
+    transform: translate(5px, -3px);
     z-index: -1;
   }
-  &:before {
-    animation: glitch-left 1s cubic-bezier(.25, .46, .45, .94) both infinite
-  }
-  &:after {
-    animation: glitch-left-2 1s cubic-bezier(.25, .46, .45, .94) reverse both infinite
+  &:hover {
+    &:before {
+      animation: glitch-left 1s cubic-bezier(.25, .46, .45, .94) both infinite
+    }
+    &:after {
+      animation: glitch-left-2 1s cubic-bezier(.25, .46, .45, .94) reverse both infinite
+    }
   }
 }
 
 
 @keyframes glitch-left {
   0% {
-      transform: translate(0)
+    transform: translate(-5px, 3px)
   }
   33% {
-      transform: translate(-5px, 3px)
+    transform: translate(5px, -3px)
   }
   66% {
-      transform: translate(5px, -3px)
+      transform: translate(0)
   }
   to {
-      transform: translate(0)
+    transform: translate(-5px, 3px)
   }
 }
+
 @keyframes glitch-left-2 {
   0% {
-      transform: translate(0)
+    transform: translate(-5px, 3px)
   }
   33% {
-      transform: translate(-5px, -3px)
+    transform: translate(5px, -3px)
   }
   66% {
-      transform: translate(5px, 2px)
+      transform: translate(0)
   }
   to {
-      transform: translate(0)
+    transform: translate(-5px, 3px)
   }
 }
 
