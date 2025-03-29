@@ -2,9 +2,9 @@ import { getCategories } from '@/api/getCategories';
 import { getPosts } from '@/api/getPosts';
 import { getProjects } from '@/api/getProjects';
 import { getStoryline } from '@/api/getStoryline';
-import PostsPage from '@/pages/Posts';
-import ProjectsPage from '@/pages/Projects';
-import AboutPage from '@/pages/About';
+import PostsPage from '@/views/Posts';
+import ProjectsPage from '@/views/Projects';
+import AboutPage from '@/views/About';
 import type { Category } from '@/types';
 
 export async function generateStaticParams() {

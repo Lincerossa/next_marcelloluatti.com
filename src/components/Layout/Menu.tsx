@@ -1,7 +1,6 @@
 'use client';
 
 import { FC, useEffect, useState } from 'react';
-import { usePathname } from 'next/navigation';
 import type { MenuProps, MenuItemsProps } from './types';
 import Link from 'next/link';
 import Hamburger from './Hamburger';
@@ -37,7 +36,6 @@ const MenuItems: FC<MenuItemsProps> = ({ items, pathname, initial, mode }) => (
 
 const Mobile: FC<MenuProps> = (props) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
-  const pathname = usePathname();
   useEffect(() => {
     if (typeof window !== 'undefined') {
       window.document.getElementsByTagName('html')[0].style.overflowY =
@@ -47,7 +45,7 @@ const Mobile: FC<MenuProps> = (props) => {
 
   useEffect(() => {
     setMenuOpen(false);
-  }, [pathname]);
+  }, [props.pathname]);
 
   return (
     <>

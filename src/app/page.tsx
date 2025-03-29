@@ -1,5 +1,5 @@
 import { getStoryline } from '@/api/getStoryline';
-import HomePage from '@/pages/Home';
+import HomePage from '@/views/Home';
 
 export default async function Page() {
   const about = await getStoryline();
