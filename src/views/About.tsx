@@ -1,4 +1,3 @@
-import PageBody from '@/components/PageBody';
 import PageHero from '@/components/PageHero';
 import StoryLine from '@/components/StoryLine';
 import type { StoryLineProps } from '@/components/StoryLine/types';
@@ -8,16 +7,15 @@ import { FC } from 'react';
 type AboutProps = {
   title: string;
   items: StoryLineProps['items'];
-  content: string;
 };
 
-const About: FC<AboutProps> = ({ title, items, content }) => (
+const About: FC<AboutProps> = ({ title, items }) => (
   <>
     <PageHero title={title} />
     <Wrapper>
-      <PageBody content={content}>
+      <div className="py-8">
         <StoryLine items={items} />
-      </PageBody>
+      </div>
     </Wrapper>
   </>
 );
