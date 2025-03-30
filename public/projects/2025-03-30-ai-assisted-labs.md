@@ -26,18 +26,8 @@ content: >-
 
   \
 
-  The release has been successful[ (SEE HERE)](https://www.qa.com/en-us/resources/blog/introducing-ela-your-expert-learning-assistant/)\
-
-  \
-
-  The product has been shown directly in the main category page
+  Here's the release announcement [SEE HERE](https://www.qa.com/en-us/resources/blog/introducing-ela-your-expert-learning-assistant/)
 
 
   ![](https://res.cloudinary.com/dmgymopan/image/upload/v1743359043/marcelloluatti.com/q8uwmpoezubsub1lorg9.png)
-
-
-  \---
-
-
-  ![](https://res.cloudinary.com/dmgymopan/image/upload/v1743265780/marcelloluatti.com/Screenshot_2025-03-29_alle_17.27.14_on1g8o.png)
 ---
