@@ -15,7 +15,7 @@ export default async function Page() {
           description: 'Here a list of my recent works',
           tags: ['e-commerce', 'saas', 'cms', 'nextjs', 'bpmn'],
           image: {
-            src: 'https://res.cloudinary.com/dmgymopan/image/upload/v1743194810/marcelloluatti.com/photo-1531297484001-80022131f5a1_p6xlcr.avif',
+            src: 'https://res.cloudinary.com/dmgymopan/image/upload/v1743359769/marcelloluatti.com/yjxfi5tndxeabd5oct0g.png',
             description: 'description',
             alt: 'alt',
           },
@@ -26,7 +26,7 @@ export default async function Page() {
           description: 'Here a list of my recent articles',
           tags: ['design patterns', 'css', 'javascript'],
           image: {
-            src: 'https://res.cloudinary.com/dmgymopan/image/upload/v1743194810/marcelloluatti.com/photo-1531297484001-80022131f5a1_p6xlcr.avif',
+            src: 'https://res.cloudinary.com/dmgymopan/image/upload/v1743359768/marcelloluatti.com/iyznibawzpvmfe3mothe.png',
             description: 'description',
             alt: 'alt',
           },

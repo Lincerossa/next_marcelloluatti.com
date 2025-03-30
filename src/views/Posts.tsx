@@ -14,7 +14,7 @@ const Posts: FC<PostsProps> = ({ items, title }) => {
     <>
       <PageHero title={title} />
       <Wrapper>
-        <ListOfCards items={items} />
+        <ListOfCards maxCol={2} items={items} />
       </Wrapper>
     </>
   );
