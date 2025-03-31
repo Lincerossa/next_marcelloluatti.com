@@ -16,8 +16,6 @@ content: >-
   Let's analyze the following snippet to break it down:
 
 
-
-
   ```
 
   const promise = () =>
@@ -47,9 +45,6 @@ content: >-
     return a();
   };
 
-
-
-
   ```
 
 
@@ -61,30 +56,25 @@ content: >-
   **1. Call Stack Execution:**
 
 
-  \- a() is invoked, pushing a onto the call stack.\
+  * a() is invoked, pushing a onto the call stack.
 
-  - a() calls b(), adding b to the stack.\
+  * a() calls b(), adding b to the stack.
 
-  - b() calls c(), adding c to the stack.\
+  * b() calls c(), adding c to the stack  and sets up a setTimeout (macro-task) and a promise().then (micro-task).
 
-  - c() returns "c", which resolves b() as "bc".\
+  * c() returns "c", which resolves b() as "bc".
 
-  - b() then continues execution and sets up a setTimeout (macro-task) and a promise().then (micro-task).\
+  * b() returns "bc", resolving a() as "abc".
 
-  - b() returns "bbc", resolving a() as "abc".\
-
-  -Since `a()` fully executes before the event loop intervenes, the first logged value is: **abc**\
-
-  \
-
-  **2. Microtasks vs. Macrotasks:**\
-
-  the most important difference between microtask and macrotasks lies in how the queues are processed. The priority is higher in the microtask queue vs the macrotask one.
-
+  * Since a() fully executes before the event loop intervenes, the first logged value is: **abc**\
+    \
+    **2. Microtasks vs. Macrotasks:**\
+    the most important difference between microtask and macrotasks lies in how the queues are processed. The priority is higher in the microtask queue vs the macrotask one.
 
   \- promise().then(() => console.log("prima risolta")) is added to the microtask queue.\
 
-  - setTimeout(() => console.log("seconda risolta"), 10) is added to the task queue (macro-task queue). 
+
+  * setTimeout(() => console.log("seconda risolta"), 10) is added to the task queue (macro-task queue). 
 
 
   **3. Event Loop Processing:**\
@@ -94,7 +84,7 @@ content: >-
   In this case, for example, the timer of the setTimeout is already running, but the function that prints 'seconda risolta' will be executed only after the callstack is empty and the the micro-task queue is empty as well.\
 
 
-  - Once the call stack is empty, the microtask queue executes before the macro-task queue.
+  * Once the call stack is empty, the microtask queue executes before the macro-task queue.
 
-  - The first resolved async operation is the promise, so "prima risolta" is logged first.- Finally, after the delay, "seconda risolta" is logged.
+  * The first resolved async operation is the promise, so "prima risolta" is logged first.- Finally, after the delay, "seconda risolta" is logged.
 ---
