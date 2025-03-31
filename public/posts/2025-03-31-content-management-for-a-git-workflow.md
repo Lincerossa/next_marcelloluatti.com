@@ -41,7 +41,7 @@ content: >-
   ### **CONFIGURATION**
 
 
-  The only code-side thing to consider when it comes to make all these system to communicate together are a couple ones:
+  When it comes to make all these system to communicate together, a couple of things are required:
 
 
   \
@@ -110,10 +110,7 @@ content: >-
           fields:
             - { label: Name, name: name, widget: string }
         - { label: 'Content', name: 'content', widget: 'markdown' }
-
   ```
-
-
 
 
   **2. A way to read the .md produced at the build time:**
@@ -139,4 +136,9 @@ content: >-
   };
 
   ```
+
+
+  \
+
+  So, **Next.js** can **read these files** during the **build time** (when for example a new file .md is produced), and a new version of the website is deployed.
 ---
