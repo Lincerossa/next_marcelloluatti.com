@@ -166,6 +166,10 @@ html, body {
   margin-bottom: 1rem;
 }
 
+.react-markdown-section ul {
+  margin-bottom: 1rem;
+}
+
 .react-markdown-section li {
   margin-bottom: 0.5rem;
 }
