@@ -66,22 +66,26 @@ content: >-
 
   * b() returns "bc", resolving a() as "abc".
 
-  * Since a() fully executes before the event loop intervenes, the first logged value is: **abc**\
-    \
-    **2. Microtasks vs. Macrotasks:**\
-    the most important difference between microtask and macrotasks lies in how the queues are processed. The priority is higher in the microtask queue vs the macrotask one.
+  * Since a() fully executes before the event loop intervenes, the first logged value is: **abc**
 
-  \- promise().then(() => console.log("prima risolta")) is added to the microtask queue.\
 
+  \
+
+  **2. Microtasks vs. Macrotasks:**\
+
+  The most important **difference between microtask** and **macrotasks** lies in **how the queues are processed**. The **priority is higher in the microtask queue** vs the macrotask one.
+
+
+  * promise().then(() => console.log("prima risolta")) is added to the microtask queue.
 
   * setTimeout(() => console.log("seconda risolta"), 10) is added to the task queue (macro-task queue). 
 
 
   **3. Event Loop Processing:**\
 
-  NB: we are talking about the execution of the associated callbacks.\
+  NB: we are **talking about the execution of the associated callbacks**.\
 
-  In this case, for example, the timer of the setTimeout is already running, but the function that prints 'seconda risolta' will be executed only after the callstack is empty and the the micro-task queue is empty as well.\
+  In this case, for example, the timer of the setTimeout is already running, but the function that prints 'seconda risolta' will be **executed only after bothe the callstack and the micro-task queue are empty:**
 
 
   * Once the call stack is empty, the microtask queue executes before the macro-task queue.
