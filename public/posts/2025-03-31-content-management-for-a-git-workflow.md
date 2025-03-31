@@ -26,7 +26,7 @@ content: >-
   I discovered a much more effective workflow, which brings together different elements working in harmony:
 
 
-  1. A CMS injected via script and exposed to a specific route.
+  1. A [CMS]((https://decapcms.org/)) injected via script and exposed to a specific route
 
   2. A CI/CD pipeline that triggers the deployment whenever the repository changes.
 
@@ -36,8 +36,6 @@ content: >-
 
 
   ![](https://res.cloudinary.com/dmgymopan/image/upload/v1743410065/marcelloluatti.com/Screenshot_2025-03-31_alle_10.34.15_niaxeq.png)
-
-
 
 
   This approach not only simplifies maintenance but also improves scalability, making it a powerful solution for static website generation.
