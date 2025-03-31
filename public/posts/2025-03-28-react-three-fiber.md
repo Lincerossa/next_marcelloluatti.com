@@ -1,13 +1,14 @@
 ---
-title: react-three-fiber
+title: 3d navigable menu
 order: 20
-description: a 3d menu
-shortDescription: a demo with r3f
+description: Showcase demo
+shortDescription: Showcase demo
 slug: r3f
 image: https://res.cloudinary.com/dmgymopan/image/upload/v1743196346/marcelloluatti.com/Screenshot_2025-03-28_alle_19.51.40_winkmh.png
 tags:
   - name: react three fiber
   - name: 3d menu
+  - name: live demo
 content: >-
   During the previous release of this personal website, I wanted to create a
   **3d clickable menu** that was rotating inside a sphere with lights and stars.
@@ -22,15 +23,11 @@ content: >-
   What's going on?             
 
 
+  1. Inside the Canvas scene, the user is automatically moved in front of the main menu, using a component that does the navigation (see Surfing) and a **lerp** function
 
-
-  1.  Inside the Canvas scene, the user is automatically moved in front of the main menu, using a component that does the navigation (see Surfing)
-
-  2. Then, when the Navigation is done, OrbitControls takes place and the user can freely moves around
+  2. Then, when the Navigation is done, **OrbitControls** takes place and the user can freely moves around
 
   3. The Totems collects the items, that are basically the menu elements
-
-
 
 
   ```
@@ -79,7 +76,6 @@ content: >-
       <Lights />
     </Suspense>
   </Canvas>
-
 
   ```
 
