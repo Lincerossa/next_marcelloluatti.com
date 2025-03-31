@@ -110,29 +110,6 @@ content: >-
           fields:
             - { label: Name, name: name, widget: string }
         - { label: 'Content', name: 'content', widget: 'markdown' }
-    - name: 'posts'
-      label: 'Posts'
-      folder: 'public/posts/'
-      create: true
-      slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
-      fields:
-        - { label: 'Title', name: 'title', widget: 'string' }
-        - { label: 'Order', name: 'order', widget: 'number' }
-        - { label: 'Description', name: 'description', widget: 'string' }
-        - {
-            label: 'Short Description',
-            name: 'shortDescription',
-            widget: 'string',
-          }
-        - { label: 'Slug', name: 'slug', widget: 'string' }
-        - { label: 'Featured Image', name: 'image', widget: 'image' }
-        - label: 'Tags'
-          name: 'tags'
-          widget: 'list'
-          summary: '{{fields.name}}'
-          fields:
-            - { label: Name, name: name, widget: string }
-        - { label: 'Content', name: 'content', widget: 'markdown' }
 
   ```
 
@@ -152,11 +129,6 @@ content: >-
 
 
   type GetProjects = () => Project[]
-
-
-  type Tag = {
-    name: string
-  }
 
 
   const getProjects: GetProjects = () => {
