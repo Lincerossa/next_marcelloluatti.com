@@ -322,4 +322,367 @@ content: >-
 
 
   ```
+
+
+
+
+  ## 🔁 3. **Behavioral Patterns**
+
+
+  **Goal:** Handle **communication, delegation, and responsibility** between objects.
+
+
+
+
+  ### 3.1 **Observer**
+
+
+  **React built-in!** Listens for state changes and reacts.
+
+
+  ```
+
+  const Counter = () => {
+    const [count, setCount] = React.useState(0);
+
+    React.useEffect(() => {
+      console.log('Count updated:', count);
+    }, [count]);
+
+    return <button onClick={() => setCount(count + 1)}>{count}</button>;
+  };
+
+
+  ```
+
+
+
+
+  ### 3.2 **Strategy**
+
+
+  Select behavior at runtime.
+
+
+  ```
+
+  const UpperCase = ({ text }) => <p>{text.toUpperCase()}</p>;
+
+  const LowerCase = ({ text }) => <p>{text.toLowerCase()}</p>;
+
+
+  const TextFormatter = ({ text, strategy: Strategy }) => <Strategy text={text} />;
+
+
+  // <TextFormatter text="Hello" strategy={UpperCase} />
+
+
+  ```
+
+
+
+
+  ### 3.3 **Command**
+
+
+  Encapsulate actions as objects/functions.
+
+
+  ```
+
+  const useCommand = () => {
+    const [log, setLog] = React.useState([]);
+
+    const execute = (command) => {
+      command();
+      setLog((prev) => [...prev, command.name]);
+    };
+
+    return { execute, log };
+  };
+
+
+  const sayHello = () => alert("Hello!");
+
+
+  const App = () => {
+    const { execute } = useCommand();
+    return <button onClick={() => execute(sayHello)}>Run</button>;
+  };
+
+
+  ```
+
+
+
+
+  ### 3.4 **Chain of Responsibility**
+
+
+  Pass request along a chain of handlers.
+
+
+  ```
+
+  const withPermission = (Component) => (props) =>
+    props.user.isAdmin ? <Component {...props} /> : <p>Access Denied</p>;
+
+  const withLogging = (Component) => (props) => {
+    console.log("Rendering", Component.name);
+    return <Component {...props} />;
+  };
+
+
+  const AdminPanel = (props) => <div>Admin Stuff</div>;
+
+
+  const ProtectedAdmin = withLogging(withPermission(AdminPanel));
+
+
+  ```
+
+
+
+
+  ### 3.5 **Mediator**
+
+
+  Centralize communication between components.
+
+
+  ```
+
+  const MediatorContext = React.createContext();
+
+
+  const MediatorProvider = ({ children }) => {
+    const [message, setMessage] = React.useState("");
+    return (
+      <MediatorContext.Provider value={{ message, setMessage }}>
+        {children}
+      </MediatorContext.Provider>
+    );
+  };
+
+
+  const Sender = () => {
+    const { setMessage } = React.useContext(MediatorContext);
+    return <button onClick={() => setMessage("Hi from Sender")}>Send</button>;
+  };
+
+
+  const Receiver = () => {
+    const { message } = React.useContext(MediatorContext);
+    return <p>Received: {message}</p>;
+  };
+
+
+  ```
+
+
+
+
+  ### 3.6 **Memento**
+
+
+  Capture and restore object state.
+
+
+  ```
+
+  const useMemento = () => {
+    const [history, setHistory] = React.useState([]);
+    const [state, setState] = React.useState("");
+
+    const save = () => setHistory((h) => [...h, state]);
+    const undo = () => {
+      const prev = history[history.length - 1];
+      setHistory((h) => h.slice(0, -1));
+      setState(prev);
+    };
+
+    return { state, setState, save, undo };
+  };
+
+
+  ```
+
+
+
+
+  ### 3.7 **Template Method**
+
+
+  Define the skeleton, defer specifics to children.
+
+
+  ```
+
+  const BaseForm = ({ onSubmit, renderFields }) => (
+    <form onSubmit={onSubmit}>
+      {renderFields()}
+      <button type="submit">Submit</button>
+    </form>
+  );
+
+
+  const LoginForm = () => {
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      console.log("Login");
+    };
+
+    return (
+      <BaseForm
+        onSubmit={handleSubmit}
+        renderFields={() => (
+          <>
+            <input placeholder="Username" />
+            <input placeholder="Password" type="password" />
+          </>
+        )}
+      />
+    );
+  };
+
+
+  ```
+
+
+
+
+  ### 3.8 **State**
+
+
+  Allow an object to alter its behavior when its internal state changes.
+
+
+  ```
+
+  const TrafficLight = () => {
+    const [state, setState] = React.useState("red");
+
+    const next = {
+      red: "green",
+      green: "yellow",
+      yellow: "red",
+    };
+
+    return (
+      <button onClick={() => setState(next[state])}>
+        Current: {state.toUpperCase()}
+      </button>
+    );
+  };
+
+
+  ```
+
+
+
+
+  ### 3.9 **Visitor**
+
+
+  **Intent:** Add new operations to components without changing their code.
+
+
+  Useful when you want to apply operations across a structure (e.g. analytics, transformations).
+
+
+  ```
+
+  const Visitor = (component, fn) => {
+    return React.cloneElement(component, fn(component.props));
+  };
+
+
+  const UserCard = (props) => <div>{props.name}</div>;
+
+
+  // Apply visitor to change props without modifying UserCard itself
+
+  const ModifiedUserCard = Visitor(<UserCard name="Alice" />, (props) => ({
+    name: props.name.toUpperCase()
+  }));
+
+
+  ```
+
+
+
+
+  ### 3.10 **Interpreter Pattern**
+
+
+  **Intent:** Interpret or evaluate expressions defined in a mini-language.
+
+
+  Great for parsing user inputs, filters, or search queries.
+
+
+  ```
+
+  const interpret = (expression) => {
+    const tokens = expression.split(" ");
+    const [a, op, b] = tokens;
+    const numA = parseFloat(a);
+    const numB = parseFloat(b);
+
+    const operations = {
+      '+': () => numA + numB,
+      '-': () => numA - numB,
+      '*': () => numA * numB,
+      '/': () => numA / numB,
+    };
+
+    return operations[op] ? operations[op]() : NaN;
+  };
+
+
+  // interpret("10 * 2") => 20
+
+
+  ```
+
+
+
+
+  ### 3.11 **Iterator Pattern**
+
+
+  **Intent:** Traverse a collection without exposing its structure.
+
+
+  Useful in React for custom iteration logic (e.g. carousels, sliders, paginated lists)
+
+
+  ```
+
+  const useIterator = (items = []) => {
+    const [index, setIndex] = React.useState(0);
+
+    const next = () => setIndex((i) => (i + 1) % items.length);
+    const prev = () => setIndex((i) => (i - 1 + items.length) % items.length);
+    const current = items[index];
+
+    return { current, next, prev, index };
+  };
+
+
+  // Usage:
+
+  const Carousel = ({ images }) => {
+    const { current, next, prev } = useIterator(images);
+    return (
+      <div>
+        <button onClick={prev}>Prev</button>
+        <img src={current} alt="carousel" />
+        <button onClick={next}>Next</button>
+      </div>
+    );
+  };
+
+
+  ```
 ---
