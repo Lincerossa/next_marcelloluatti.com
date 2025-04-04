@@ -1,5 +1,5 @@
 import MagicMouse from '@/components/MagicMouse';
-import type { Metadata, Viewport } from 'next';
+import type { Metadata } from 'next';
 import './global.css';
 import { getCategories } from '@/api/getCategories';
 import Layout from '@/components/Layout';
