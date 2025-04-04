@@ -1,5 +1,5 @@
 import MagicMouse from '@/components/MagicMouse';
-import type { Metadata, Viewport } from 'next';
+import type { Metadata } from 'next';
 import './global.css';
 import { getCategories } from '@/api/getCategories';
 import Layout from '@/components/Layout';
@@ -23,13 +23,6 @@ export const metadata: Metadata = {
     url: 'https://marcelloluatti.com',
     type: 'website',
   },
-};
-
-export const viewport: Viewport = {
-  themeColor: 'light',
-  initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
 };
 
 export default async function RootLayout({

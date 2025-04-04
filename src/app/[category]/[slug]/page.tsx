@@ -5,6 +5,36 @@ import PostPage from '@/views/Post';
 import ProjectPage from '@/views/Project';
 import { Category } from '@/types';
 
+type ItemPage = {
+  params: Promise<{ category: Category; slug: string }>;
+};
+
+export async function generateMetadata({ params }: ItemPage) {
+  const { category, slug } = await params;
+  const posts = await getPosts();
+  const projects = await getProjects();
+  if (category === 'projects') {
+    const project = projects.find((project) => project.slug === slug);
+    return {
+      title: `Marcello Luatti | ${project?.title}`,
+      description: project?.description,
+      openGraph: {
+        images: project?.image.src,
+      },
+    };
+  }
+  if (category === 'posts') {
+    const post = posts.find((post) => post.slug === slug);
+    return {
+      title: `Marcello Luatti | ${post?.title}`,
+      description: post?.description,
+      openGraph: {
+        images: post?.image.src,
+      },
+    };
+  }
+}
+
 export async function generateStaticParams() {
   const categories = await getCategories();
   const posts = await getPosts();
@@ -28,10 +58,6 @@ export async function generateStaticParams() {
     })
     .flat();
 }
-
-type ItemPage = {
-  params: Promise<{ category: Category; slug: string }>;
-};
 
 export default async function ItemPage({ params }: ItemPage) {
   const { category, slug } = await params;
