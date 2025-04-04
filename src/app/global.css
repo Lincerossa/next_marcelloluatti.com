@@ -31,6 +31,26 @@ html, body {
   }
 }
 
+
+
+h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  @media (min-width: 768px){
+    font-size: 2rem;
+  }
+}
+
+h3 {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  @media (min-width: 768px){
+    font-size: 1.5rem;
+  }
+}
+
+
+
 .cool {
   position: relative;
   &:after {
@@ -170,6 +190,9 @@ html, body {
   margin-bottom: 1rem;
 }
 
+.react-markdown-section pre {
+  margin-bottom: 2rem;
+}
 .react-markdown-section li {
   margin-bottom: 0.5rem;
 }
