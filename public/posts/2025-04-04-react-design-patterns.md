@@ -33,7 +33,6 @@ content: >-
     </ThemeContext.Provider>
   );
 
-
   ```
 
 
@@ -59,7 +58,6 @@ content: >-
 
   const PrimaryButton = createButton('primary');
 
-
   ```
 
 
@@ -81,6 +79,246 @@ content: >-
 
 
   const ThemedButton = ButtonFactory('dark');
+
+  ```
+
+
+
+
+  ### 1.4 **Builder**
+
+
+  Separates the construction of a complex object from its representation so that the same construction process can create different representations.
+
+
+  ```
+
+  const useQuery = () => {
+    const [query, setQuery] = React.useState({});
+
+    const addFilter = (key, value) => setQuery((q) => ({ ...q, [key]: value }));
+    const removeFilter = (key) => setQuery((q) => {
+      const newQuery = { ...q };
+      delete newQuery[key];
+      return newQuery;
+    });
+
+    return { query, addFilter, removeFilter };
+  };
+
+
+  ```
+
+
+
+
+  ### 1.5 **Prototype**
+
+
+  Specifies the kinds of objects to create using a prototypical instance and creates new objects by copying this prototype.
+
+
+  ```
+
+  const baseComponent = (props) => <div style={{ color: 'blue' }} {...props} />;
+
+
+  const clonedComponent = (props) => React.cloneElement(baseComponent(props), { style: { color: 'red' } });
+
+
+  ```
+
+
+
+
+  ## 🏗️ 2. **Structural Patterns**
+
+
+  **Goal:** Simplify the design by identifying a simple way to realize relationships between entities.
+
+
+
+
+  ### 2.1 **Adapter**
+
+
+  Allows the interface of an existing class to be used as another interface.
+
+
+  ```
+
+  const OldComponent = ({ text }) => <div>{text}</div>;
+
+
+  const AdapterComponent = ({ content }) => <OldComponent text={content} />;
+
+
+  ```
+
+
+
+
+  ### 2.2 **Bridge**
+
+
+  Decouples an abstraction from its implementation so that the two can vary independently.
+
+
+  ```
+
+  const ThemeContext = React.createContext();
+
+
+  const ThemedButton = () => {
+    const theme = React.useContext(ThemeContext);
+    return <button style={{ backgroundColor: theme.background }}>Click me</button>;
+  };
+
+
+  ```
+
+
+
+
+  ### 2.3 **Composite**
+
+
+  Composes objects into tree structures to represent part-whole hierarchies.
+
+
+  ```
+
+  const MenuItem = ({ label, children }) => (
+    <div>
+      <div>{label}</div>
+      {children && <div className="submenu">{children}</div>}
+    </div>
+  );
+
+
+  const Menu = () => (
+    <MenuItem label="File">
+      <MenuItem label="New" />
+      <MenuItem label="Open" />
+    </MenuItem>
+  );
+
+
+  ```
+
+
+
+
+  ### 2.4 **Decorator**
+
+
+  Attaches additional responsibilities to an object dynamically.​
+
+
+  ```
+
+  const withLogging = (Component) => (props) => {
+    React.useEffect(() => {
+      console.log('Component mounted');
+      return () => console.log('Component unmounted');
+    }, []);
+    return <Component {...props} />;
+  };
+
+
+  const EnhancedComponent = withLogging(SomeComponent);
+
+
+  ```
+
+
+
+
+  ### 2.5 **Facade**
+
+
+  Provides a simplified interface to a larger body of code.
+
+
+  ```
+
+  const useAPI = () => {
+    const fetchData = async (endpoint) => {
+      const response = await fetch(endpoint);
+      return response.json();
+    };
+
+    return { fetchData };
+  };
+
+
+  const DataFetcher = ({ endpoint }) => {
+    const { fetchData } = useAPI();
+    const [data, setData] = React.useState(null);
+
+    React.useEffect(() => {
+      fetchData(endpoint).then(setData);
+    }, [endpoint]);
+
+    return <div>{data ? JSON.stringify(data) : 'Loading...'}</div>;
+  };
+
+
+  ```
+
+
+
+
+  ### 2.6 **Flyweight**
+
+
+  Uses sharing to support large numbers of fine-grained objects efficiently.
+
+
+  ```
+
+  const heavyData = new Map();
+
+
+  const getHeavyData = (key) => {
+    if (!heavyData.has(key)) {
+      heavyData.set(key, computeHeavyData(key));
+    }
+    return heavyData.get(key);
+  };
+
+
+  ```
+
+
+
+
+  ### 2.7 **Proxy**
+
+
+  Provide a placeholder to control access to another object.
+
+  In React, it's commonly used for **authorization**, **lazy loading**, or **logging wrappers**.
+
+
+  ```
+
+  const withAuth = (Component) => (props) => {
+    const isAuthenticated = useAuth(); // Custom hook or context
+
+    if (!isAuthenticated) {
+      return <p>You must log in to access this page.</p>;
+    }
+
+    return <Component {...props} />;
+  };
+
+
+  // Usage
+
+  const Dashboard = () => <div>Private content</div>;
+
+  const ProtectedDashboard = withAuth(Dashboard);
 
 
   ```
