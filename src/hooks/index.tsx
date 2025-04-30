@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export const useIsMobile = () => {
   const [isMobile, setSize] = useState(false);
@@ -14,3 +14,22 @@ export const useIsMobile = () => {
   }, []);
   return isMobile;
 };
+
+export function useInViewOnce(options = { threshold: 0.3 }) {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const [inView, setInView] = useState(false);
+
+  useEffect(() => {
+    if (!ref.current) return;
+    const observer = new window.IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setInView(true);
+        observer.disconnect();
+      }
+    }, options);
+    observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [options]);
+
+  return [ref, inView] as const;
+}
