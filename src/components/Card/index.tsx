@@ -3,7 +3,7 @@ import { FC } from 'react';
 import type { CardProps } from './types';
 import Image from 'next/image';
 import Tags from '../Tags';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { useInViewOnce } from '@/hooks/index';
 
 const Card: FC<CardProps> = ({ title, tags, description, image }) => {
