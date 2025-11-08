@@ -10,9 +10,17 @@ content: >-
 
   My current favorite tools are: **Next.js, React.js, GraphQL, TypeScript, Jest, xState, Styled-Components/tailwindcss**
 storyline:
+  - role: Senior Frontend Engineer
+    company: Mobility
+    date: 7/2025 - present
+    tags:
+      - name: vite
+      - name: product engineer
+      - name: interaction and integration tests
+    name: Mobility
   - role: Frontend Engineer II
     company: Cloud Academy
-    date: 09/2021 - present
+    date: 09/2021 - 06/2025
     description: >-
       I work in the Labs development team, managing the front end in an NX
       monorepo with React, TypeScript, GraphQL, Next.js, and xState. Key
@@ -113,9 +121,15 @@ storyline:
   - role: Frontend Developer
     company: Supermoney
     date: 11-2015 - 05-2016
-    description: Managed the **frontend** of Italy’s first multi-sector comparison
-      portal. Developed **landing pages** and collaborated **across business
-      units**
+    description: >-
+      Building a B2B web app from the ground up, fully owning architecture,
+      component libraries, design system integration and automatic testing 
+
+
+      Currently focusing on performance optimization, caching strategies, and optimistic UI updates.
+
+
+      Acting as a cross-functional contributor supporting the entire product team
     tags:
       - name: Bootstrap
       - name: LESS
